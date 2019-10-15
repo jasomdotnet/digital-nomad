@@ -1,0 +1,389 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Digital Nomad\n"
+"POT-Creation-Date: 2019-10-12 19:39+0200\n"
+"Last-Translator: Jasom Dotnet\n"
+"Language-Team: Jasom.net\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"PO-Revision-Date: \n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:16
+#, php-format
+msgid "Goob job, you found a page that doesn't exist. Try to use search form below or read my latest post: %s."
+msgstr ""
+
+#: ../functions.php:134
+msgid "Header text"
+msgstr ""
+
+#: ../functions.php:135
+msgid "Menu/about text for Header sidebar. Use \"Custom HTML\" widget."
+msgstr ""
+
+#: ../functions.php:163
+msgid "Digital Nomad Options"
+msgstr ""
+
+#: ../functions.php:175
+msgid "Background Image For Header"
+msgstr ""
+
+#: ../functions.php:176
+msgid "Image used in header as background."
+msgstr ""
+
+#: ../functions.php:189
+msgid "Background Image For Footer"
+msgstr ""
+
+#: ../functions.php:190
+msgid "Image used in footer as background."
+msgstr ""
+
+#: ../functions.php:203
+msgid "Default Featured Image"
+msgstr ""
+
+#: ../functions.php:204
+msgid "Image used in post preview when no feature image is set in the post."
+msgstr ""
+
+#: ../functions.php:217
+msgid "Archive Page"
+msgstr ""
+
+#: ../functions.php:218
+#, php-format
+msgid "Select a <a href=\"%s\">static page</a> which will serve as archive for posts."
+msgstr ""
+
+#: ../functions.php:235
+msgid "Infinite Scroll"
+msgstr ""
+
+#: ../functions.php:236
+msgid "Enable infinite scroll for blog archive, categories and tags."
+msgstr ""
+
+#: ../functions.php:250
+msgid "Lazyload"
+msgstr ""
+
+#: ../functions.php:251
+msgid "Enable lazyload using bLazy (vanilla JS library)."
+msgstr ""
+
+#: ../functions.php:279
+msgid "Background Image For Previous Pager"
+msgstr ""
+
+#: ../functions.php:280
+msgid "Image used as bacground in \"previous\" post(s) navigation."
+msgstr ""
+
+#: ../functions.php:294
+msgid "Background Image For Next Pager"
+msgstr ""
+
+#: ../functions.php:295
+msgid "Image used as bacground in \"next\" post(s) navigation."
+msgstr ""
+
+#: ../functions.php:419
+msgid "edited:"
+msgstr ""
+
+#: ../functions.php:438
+#, php-format
+msgctxt "%s = human-readable time difference"
+msgid "%s ago"
+msgstr ""
+
+#: ../functions.php:616
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: ../functions.php:617
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: ../functions.php:693
+msgid "Rescroll to load news posts."
+msgstr ""
+
+#: ../functions.php:694
+msgid "No more posts"
+msgstr ""
+
+#: ../functions.php:696
+msgid "Something unexpected happened with AJAX request :-/"
+msgstr ""
+
+#: ../functions.php:813
+msgid "&uarr; Up"
+msgstr ""
+
+#: ../functions.php:835
+#, php-format
+msgid "Powered by %s."
+msgstr ""
+
+#: ../functions.php:836
+#, php-format
+msgid "Theme by %s."
+msgstr ""
+
+#: ../functions.php:856
+msgid "Post Archive Page"
+msgstr ""
+
+#: ../functions.php:950
+msgid "There are no posts."
+msgstr ""
+
+#: ../functions.php:1106
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:1108
+msgid "Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved."
+msgstr ""
+
+#: ../functions.php:1117
+#, php-format
+msgid "%s <span class=\"says\">said on</span>"
+msgstr ""
+
+#: ../functions.php:1124
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../functions.php:1150
+msgid "Edit"
+msgstr ""
+
+#: ../header.php:12
+msgid "Skip to content"
+msgstr ""
+
+#: ../header.php:25
+msgid "Jump Down"
+msgstr ""
+
+#: ../includes/theme-panel.php:9
+msgid "Digital Nomad"
+msgstr ""
+
+#: ../includes/theme-panel.php:20
+msgid "Welcome to Digital Nomad"
+msgstr ""
+
+#: ../includes/theme-panel.php:22
+msgid "Congrats on choosing Digital Nomad, theme for digital nomads like you."
+msgstr ""
+
+#: ../includes/theme-panel.php:25
+msgid "Theme Homepage"
+msgstr ""
+
+#: ../includes/theme-panel.php:27
+msgid "Configuration"
+msgstr ""
+
+#: ../includes/theme-panel.php:28
+msgid "Follow these steps to set up theme correctly:"
+msgstr ""
+
+#: ../includes/theme-panel.php:30
+#, php-format
+msgid "Install using a child theme to avoid custom overrides lost. Learn more about child themes on <a href=\"%s\">Wordpress.org</a>."
+msgstr ""
+
+#: ../includes/theme-panel.php:31
+#, php-format
+msgid "Under <a href=\"%s\">Widgets</a> add menu/about text for Header sidebar. Use \"Custom HTML\" widget."
+msgstr ""
+
+#: ../includes/theme-panel.php:32
+#, php-format
+msgid "In <a href=\"%s\">Customizer</a> set:"
+msgstr ""
+
+#: ../includes/theme-panel.php:34
+msgid "Under \"Site Identity\" set square \"Logo\" and \"Site Icon\"."
+msgstr ""
+
+#: ../includes/theme-panel.php:35
+msgid "Under \"Homepage Settings\" use \"Your latest posts\" as homepage display."
+msgstr ""
+
+#: ../includes/theme-panel.php:36
+msgid "Under \"Digital Nomad Options\":"
+msgstr ""
+
+#: ../includes/theme-panel.php:38
+msgid "Set \"Background Image For Header\""
+msgstr ""
+
+#: ../includes/theme-panel.php:39
+msgid "Set \"Background Image For Footer\""
+msgstr ""
+
+#: ../includes/theme-panel.php:40
+msgid "Set \"Default Featured Image\", image used in post archives when no feature image is selected."
+msgstr ""
+
+#: ../includes/theme-panel.php:41
+msgid "Select static \"Archive Page\" which will be used as an archive for all posts. Date archives are disabled by default and will return 404 if no archive page is selected."
+msgstr ""
+
+#: ../includes/theme-panel.php:42
+msgid "Enable \"Infinite Scroll\" for latest posts, categories and tags. Custom post types and custom taxonomies are also supported."
+msgstr ""
+
+#: ../includes/theme-panel.php:43
+msgid "Enable \"Lazyload\" for latest posts, categories and tags. NOTE: Images in posts are not nativelly lazyloaded"
+msgstr ""
+
+#: ../includes/theme-panel.php:44
+msgid "Set \"Background Image For Next & Previous Pager\" for &lt;noscript&gt; support."
+msgstr ""
+
+#: ../includes/theme-panel.php:49
+msgid "That's it!"
+msgstr ""
+
+#: ../includes/theme-panel.php:52
+msgid "Recommended Plugins"
+msgstr ""
+
+#: ../includes/theme-panel.php:55
+msgid "reSmush.it Image Optimizer"
+msgstr ""
+
+#: ../includes/theme-panel.php:56
+msgid "Digital Nomad theme relies heavy on images. reSmush.it is free service providing image size reduction based on several advanced algorithms. The API accept JPG, PNG and GIF files up to 5MB."
+msgstr ""
+
+#: ../includes/theme-panel.php:59
+msgid "Yoast SEO"
+msgstr ""
+
+#: ../includes/theme-panel.php:60
+msgid "My favorite option when it comes to SEO plugin for WordPress. Yoast SEO generates sitemap.xml, sets page titles, creates metatags, etc."
+msgstr ""
+
+#: ../includes/theme-panel.php:65
+msgid "Code Syntax Block"
+msgstr ""
+
+#: ../includes/theme-panel.php:66
+msgid "A plugin to extend Gutenberg code block with syntax highlighting."
+msgstr ""
+
+#: ../includes/theme-panel.php:70
+msgid "Post-installation Actions"
+msgstr ""
+
+#: ../includes/theme-panel.php:73
+msgid "Leave a review"
+msgstr ""
+
+#: ../includes/theme-panel.php:74
+msgid "If you like Digital Nomad, review the theme on WordPress.org. Leave a review even if you don't like it."
+msgstr ""
+
+#: ../includes/theme-panel.php:77
+msgid "Feature Requests"
+msgstr ""
+
+#: ../includes/theme-panel.php:78
+msgid "Send feature request for Digital Nomad theme."
+msgstr ""
+
+#: ../includes/theme-panel.php:83
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: ../includes/theme-panel.php:84
+msgid "If you like my work, follow me on Twitter."
+msgstr ""
+
+#: ../includes/theme-panel.php:88
+msgid "What theme does not"
+msgstr ""
+
+#: ../includes/theme-panel.php:90
+msgid "Theme doesn't require jQuery so (after additional optimalization) you can easily reach out high score in Google's PageSpeed Insights."
+msgstr ""
+
+#: ../includes/theme-panel.php:91
+msgid "Theme doesn't support post-formats. I have personally never used this WordPress feature and that's why I didn't add support."
+msgstr ""
+
+#: ../includes/theme-panel.php:92
+msgid "Theme doesn't use navigation menu. Instead, it uses short about-me text in the header which can be hotlinked to various sections of the blog."
+msgstr ""
+
+#: ../includes/theme-panel.php:94
+msgid "@TODO"
+msgstr ""
+
+#: ../includes/theme-panel.php:96
+msgid "Add native lazyloading for post images."
+msgstr ""
+
+#: ../includes/theme-panel.php:97
+msgid "Add Medium like zoom for post images."
+msgstr ""
+
+#: ../includes/theme-panel.php:100
+msgid "It's not in theme, it's in the content! But good theme also helps..."
+msgstr ""
+
+#: ../includes/theme-panel.php:152
+msgid "About like menu"
+msgstr ""
+
+#: ../templates/archive-title.php:14
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../templates/archive-title.php:17
+msgid "Page not found"
+msgstr ""
+
+#: ../templates/archive-title.php:20
+msgid "Asides"
+msgstr ""
+
+#: ../templates/archive-title.php:23
+msgid "Images"
+msgstr ""
+
+#: ../templates/archive-title.php:26
+msgid "Videos"
+msgstr ""
+
+#: ../templates/archive-title.php:29
+msgid "Quotes"
+msgstr ""
+
+#: ../templates/archive-title.php:32
+msgid "Links"
+msgstr ""
+
+#: ../templates/post-none.php:5
+msgid "No content, empty, zero, nothing..."
+msgstr ""
