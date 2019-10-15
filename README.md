@@ -1,4 +1,4 @@
-# DigitalNomad
+# Digital Nomad
 Digital Nomad Wordpress theme.
 
 ## Description
