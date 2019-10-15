@@ -1,5 +1,5 @@
 # DigitalNomad
-Digital Nomad Wordpress theme. Mobile-first one-column theme for digital nomads like you.
+Digital Nomad Wordpress theme.
 
 ## Description
 
