@@ -149,13 +149,13 @@ if ( !function_exists( 'digitalnomad_get_what_kind_details' ) ) {
 
 }
 
-if ( !function_exists( 'get_archive_post_type_object' ) ) {
+if ( !function_exists( 'digitalnomad_get_archive_post_type_object' ) ) {
 
 	/**
 	 * Return post type name or taxonomy name
 	 * @return type
 	 */
-	function get_archive_post_type_object() {
+	function digitalnomad_get_archive_post_type_object() {
 		$type = is_archive() ? get_queried_object()->name : false;
 		return empty( $type ) ? 'post' : $type;
 	}

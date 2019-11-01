@@ -41,13 +41,13 @@
 	if ( is_category() ) :
 		$category_description = category_description();
 		if ( !empty( $category_description ) ) :
-			echo apply_filters( 'category_archive_meta', '<div class="header_text archive_desc">' . $category_description . '</div>' );
+			echo apply_filters( 'digitalnomad_category_archive_meta', '<div class="header_text archive_desc">' . $category_description . '</div>' );
 		endif;
 
 	elseif ( is_tag() ) :
 		$tag_description = tag_description();
 		if ( !empty( $tag_description ) ) :
-			echo apply_filters( 'tag_archive_meta', '<div class="header_text archive_desc">' . $tag_description . '</div>' );
+			echo apply_filters( 'digitalnomad_tag_archive_meta', '<div class="header_text archive_desc">' . $tag_description . '</div>' );
 		endif;
 
 	endif;

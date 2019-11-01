@@ -17,7 +17,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 
 		// Add and manipulate theme images to be used.
 		$wp_customize->add_section( 'digitalnomad_options', array(
-			'title'		 => __( 'Digital Nomad Options', 'digital-nomad' ),
+			'title'		 => __( 'Digital Nomad Settings', 'digital-nomad' ),
 			'priority'	 => 168,
 		) );
 		// footer image

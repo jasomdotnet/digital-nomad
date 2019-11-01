@@ -31,6 +31,12 @@
 
 		</div><!-- #inner_content -->
 
+		<?php
+		if ( comments_open() ):
+			comments_template();
+		endif;
+		?>
+
 		<?php do_action( 'digitalnomad_after_inner_content' ); ?>
 
 	</article><!-- #digitalnomad_post_container -->

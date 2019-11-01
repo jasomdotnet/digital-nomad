@@ -51,7 +51,7 @@ if ( !function_exists( 'digitalnomad_theme_features' ) ) {
 		add_theme_support( 'title-tag' );
 		// Add theme support for Custom Header
 		$header_args		 = array(
-			'default-image'			 => get_template_directory_uri() . '/images/default-header-prague-665637-pxhere-com.jpg',
+			'default-image'			 => get_template_directory_uri() . '/images/adventure-albay-clouds-environment-field-grass-1562371-pxhere-com.jpg',
 			'width'					 => 0,
 			'height'				 => 0,
 			'flex-width'			 => true,
@@ -82,7 +82,7 @@ if ( !function_exists( 'digitalnomad_theme_features' ) ) {
 			'attachments'	 => array(
 				'image-header'	 => array(
 					'post_title' => __( 'Header default image', 'digital-nomad' ),
-					'file'		 => 'images/default-header-prague-665637-pxhere-com.jpg',
+					'file'		 => 'images/adventure-albay-clouds-environment-field-grass-1562371-pxhere-com.jpg',
 				),
 				'image-footer'	 => array(
 					'post_title' => __( 'Footer default image', 'digital-nomad' ),
@@ -125,6 +125,6 @@ if ( !function_exists( 'digitalnomad_theme_features' ) ) {
 }
 add_action( 'after_setup_theme', 'digitalnomad_theme_features' );
 
-if ( !isset( $content_width ) )
+if ( !isset( $content_width ) ) {
 	$content_width = 1200;
-
+}

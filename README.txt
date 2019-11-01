@@ -2,15 +2,17 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
+Stable tag: 1.0
+Version: 1.0
 Requires PHP: 5.6
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Mobile-first one-column theme for digital nomads like you.
 
 == Description ==
 
-Digital Nomad is mobile-first one-column theme for announcing personal or professional achievements through WordPress blog. It perfectly fits for digital nomad lifestyle. Theme meets all necessary WordPress coding standards plus doesn't create obstacles to receive high evaluation in Google’s PageSpeed Insights tool. Theme homepage has 98/100 score thanks to several additional tweaks placed in bundled child theme. Digital Nomad Theme was inspired by Pieter's Nomadlist.com and coded out by Jasom Dotnet from Wperf.com.
+Digital Nomad is mobile-first one-column theme for announcing personal or professional achievements through WordPress blog. It perfectly fits for digital nomad lifestyle. Theme meets all necessary WordPress coding standards plus doesn't create obstacles to receive high evaluation in Google’s PageSpeed Insights tool. Theme homepage has 98/100 score thanks to several additional tweaks placed over child theme.
 
 For more information about Digital Nomad WordPress theme please go to https://www.jasom.net/digital-nomad-wordpress-theme/
 
@@ -24,7 +26,7 @@ For more information about Digital Nomad WordPress theme please go to https://ww
 
 == Copyright ==
 
-Digital Nomad WordPress Theme, Copyright 2016 Wperf.com
+Digital Nomad WordPress Theme, Copyright 2019 Wperf.com
 Digital Nomad is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -59,9 +61,9 @@ Default next pager image, default-next-pager-107966-pxhere-com.jpg
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://pxhere.com/en/photo/107966
 
-Default previous pager image, default-previous-pager-675708-pxhere-com.jpg
+Default previous pager image, adventure-albay-clouds-environment-field-grass-1562371-pxhere-com.jpg
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pxhere.com/en/photo/675708
+Source: https://pxhere.com/en/photo/1562371
 
 == Changelog ==
 

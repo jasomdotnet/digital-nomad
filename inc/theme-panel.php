@@ -6,7 +6,7 @@ if ( !function_exists( 'digitalnomad_add_theme_page' ) ) {
 	 * Adds custom page for digitalnomad
 	 */
 	function digitalnomad_add_theme_page() {
-		add_theme_page( __( 'Digital Nomad', 'digital-nomad' ) . ' ' . DIGITALNOMAD_THEME_VERSION, 'Digital Nomad', 'edit_theme_options', 'digitalnomad-panel', 'digitalnomad_info_page_content' );
+		add_theme_page( __( 'Digital Nomad', 'digital-nomad' ) . ' ' . wp_get_theme()->get( 'Version' ), 'Digital Nomad', 'edit_theme_options', 'digitalnomad-panel', 'digitalnomad_info_page_content' );
 	}
 
 }
@@ -130,7 +130,7 @@ if ( !function_exists( 'digitalnomad_admin_notice__success' ) ) {
 	function digitalnomad_admin_notice__success() {
 		?>
 		<div class="notice notice-success is-dismissible">
-			<p><?php printf( __( 'Digital Nomad theme activated. <a href="%s">Visit configuration instructions here</a>.', 'digitalnomad' ), esc_url( admin_url( 'themes.php?page=digitalnomad-panel' ) ) ); ?></p>
+			<p><?php printf( __( 'Digital Nomad theme activated. <a href="%s">Visit configuration instructions here</a>.', 'digital-nomad' ), esc_url( admin_url( 'themes.php?page=digitalnomad-panel' ) ) ); ?></p>
 		</div>
 		<?php
 	}
