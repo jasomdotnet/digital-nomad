@@ -116,7 +116,7 @@ add_action( 'wp_footer', 'digitalnomad_footer_image_for_footer', -1 );
 if ( ! function_exists( 'digitalnomad_add_scripts' ) ) {
 
     /**
-     * Adds required scripts to the theme
+     * Adds JS
      * https://rudrastyh.com/wordpress/include-css-and-javascript.html#cached-css-and-js
      */
     function digitalnomad_add_scripts() {
