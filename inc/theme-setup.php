@@ -113,7 +113,7 @@ if ( !function_exists( 'digitalnomad_theme_features' ) ) {
 				)
 			),
 			'options'		 => array(
-				//'digitalnomad_archive_page'			 => '{{archive}}', // doesn't work, don't know why
+				//'digitalnomad_archive_page' => '{{archive}}', // doesn't work, don't know why
 				'digitalnomad_default_feature_image' => '{{image-feature}}',
 				'digitalnomad_footer_image'			 => '{{image-footer}}',
 				'digitalnomad_previous_bg'			 => '{{image-bg-prev}}',

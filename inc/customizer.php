@@ -153,9 +153,9 @@ if ( !function_exists( 'digitalnomad_sanitize_archive_page' ) ) {
 	 */
 	function digitalnomad_sanitize_archive_page( $page_id, $setting ) {
 		// ensure value is positive integer.
-		$page_id	 = absint( $page_id );
+		$page_id = absint( $page_id );
 		// get list of possible values
-		$pages = get_pages();
+		$pages	 = get_pages();
 		foreach ( $pages as $page ) {
 			$all_possible_pages[] = $page->ID;
 		}

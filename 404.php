@@ -13,7 +13,15 @@
 			</header>
 
 			<div class="post_content">
-				<p><?php printf( __( 'Goob job, you found a page that doesn\'t exist. Try to use search form below or read my latest post: %s.', 'digital-nomad' ), digitalnomad_get_latest_article() ); ?></p>
+				<p>
+					<?php
+					_e( 'Goob job, you found a page that doesn\'t exist.', 'digital-nomad' );
+					$article = digitalnomad_get_latest_article();
+					if ( !empty( $article ) ) {
+						echo ' ' . __( 'Try to use search form below or read my latest post:', 'digital-nomad' ) . ' ' . $article;
+					}
+					?>
+				</p>
 				<?php get_search_form(); ?>
 			</div>
 
@@ -21,7 +29,7 @@
 
 		</div><!-- #inner_content -->
 
-		<?php do_action( 'digitalnomad_after_inner_content' ); ?>
+	<?php do_action( 'digitalnomad_after_inner_content' ); ?>
 
 	</article><!-- #digitalnomad_post_container -->
 </section><!-- #main -->

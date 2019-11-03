@@ -6,18 +6,18 @@ if ( !function_exists( 'digitalnomad_add_theme_page' ) ) {
 	 * Adds custom page for digitalnomad
 	 */
 	function digitalnomad_add_theme_page() {
-		add_theme_page( __( 'Digital Nomad', 'digital-nomad' ) . ' ' . wp_get_theme()->get( 'Version' ), 'Digital Nomad', 'edit_theme_options', 'digitalnomad-panel', 'digitalnomad_info_page_content' );
+		add_theme_page( __( 'Digital Nomad', 'digital-nomad' ) . ' ' . wp_get_theme()->get( 'Version' ), 'Digital Nomad', 'edit_theme_options', 'digitalnomad-panel', 'digitalnomad_panel_content' );
 	}
 
 }
 add_action( 'admin_menu', 'digitalnomad_add_theme_page' );
 
-if ( !function_exists( 'digitalnomad_info_page_content' ) ) {
+if ( !function_exists( 'digitalnomad_panel_content' ) ) {
 
-	function digitalnomad_info_page_content() {
+	function digitalnomad_panel_content() {
 		?>
 		<div class="wrap about-wrap full-width-layout">
-			<h1><?php _e( 'Welcome to Digital Nomad', 'digital-nomad' ); ?> <?php echo DIGITALNOMAD_THEME_VERSION; ?></h1>
+			<h1><?php _e( 'Welcome to Digital Nomad', 'digital-nomad' ); ?> <?php echo wp_get_theme()->get( 'Version' ); ?></h1>
 			<p class="about-text">
 				<?php _e( 'Congrats on choosing Digital Nomad, theme for digital nomads like you.', 'digital-nomad' ); ?>
 				<br>
@@ -32,10 +32,10 @@ if ( !function_exists( 'digitalnomad_info_page_content' ) ) {
 				<li><?php printf( __( 'In <a href="%s">Customizer</a> set:', 'digital-nomad' ), admin_url( 'customize.php?return=%2Fwp-admin%2Fthemes.php' ) ); ?>
 					<ol>
 						<li><?php _e( 'Under "Site Identity" set square "Logo" and "Site Icon".', 'digital-nomad' ); ?></li>
+						<li><?php _e( 'Under "Header Image" set background picture for header.', 'digital-nomad' ); ?></li>
 						<li><?php _e( 'Under "Homepage Settings" use "Your latest posts" as homepage display.', 'digital-nomad' ); ?></li>
 						<li><?php _e( 'Under "Digital Nomad Options":', 'digital-nomad' ); ?>
 							<ol>
-								<li><?php _e( 'Set "Background Image For Header"', 'digital-nomad' ); ?></li>
 								<li><?php _e( 'Set "Background Image For Footer"', 'digital-nomad' ); ?></li>
 								<li><?php _e( 'Set "Default Featured Image", image used in post archives when no feature image is selected.', 'digital-nomad' ); ?></li>
 								<li><?php _e( 'Select static "Archive Page" which will be used as an archive for all posts. Date archives are disabled by default and will return 404 if no archive page is selected.', 'digital-nomad' ); ?></li>
@@ -53,7 +53,7 @@ if ( !function_exists( 'digitalnomad_info_page_content' ) ) {
 			<div class="has-2-columns is-fullwidth">
 				<div class="column">
 					<h4><a href="https://wordpress.org/plugins/resmushit-image-optimizer/"><?php _e( 'reSmush.it Image Optimizer', 'digital-nomad' ); ?></a></h4>
-					<p><?php _e( 'Digital Nomad theme relies heavy on images. reSmush.it is free service providing image size reduction based on several advanced algorithms. The API accept JPG, PNG and GIF files up to 5MB.', 'digital-nomad' ); ?></p>
+					<p><?php _e( 'Digital Nomad theme relies heavy on images. reSmush.it is free service providing image size reduction based on several advanced algorithms. The API accept JPG, PNG and GIF files up to 5MB. Set reSmush,it quality to 82.', 'digital-nomad' ); ?></p>
 				</div>
 				<div class="column">
 					<h4><a href="https://wordpress.org/plugins/wordpress-seo/"><?php _e( 'Yoast SEO', 'digital-nomad' ); ?></a></h4>
@@ -64,6 +64,10 @@ if ( !function_exists( 'digitalnomad_info_page_content' ) ) {
 				<div class="column">
 					<h4><a href="https://wordpress.org/plugins/code-syntax-block/"><?php _e( 'Code Syntax Block', 'digital-nomad' ); ?></a></h4>
 					<p><?php _e( 'A plugin to extend Gutenberg code block with syntax highlighting.', 'digital-nomad' ); ?></p>
+				</div>
+				<div class="column">
+					<h4><a href="https://wordpress.org/plugins/wp-super-cache/"><?php _e( 'WP Super Cache', 'digital-nomad' ); ?></a></h4>
+					<p><?php _e( 'Don not leave your site without enabled cache. WP Super Cache from Automattic does the job well.', 'digital-nomad' ); ?></p>
 				</div>
 			</div>
 			<hr>
@@ -89,7 +93,7 @@ if ( !function_exists( 'digitalnomad_info_page_content' ) ) {
 			<ul>
 				<li><?php _e( 'Theme doesn\'t require jQuery so (after additional optimalization) you can easily reach out high score in Google\'s PageSpeed Insights.', 'digital-nomad' ); ?></li>
 				<li><?php _e( 'Theme doesn\'t support post-formats. I have personally never used this WordPress feature and that\'s why I didn\'t add support.', 'digital-nomad' ); ?></li>
-				<li><?php _e( 'Theme doesn\'t use navigation menu. Instead, it uses short about-me text in the header which can be hotlinked to various sections of the blog.', 'digital-nomad' ); ?></li>
+				<li><?php _e( 'Theme doesn\'t use navigation menus. Instead, it uses short about-me text in the header which can be hotlinked to various sections of the blog.', 'digital-nomad' ); ?></li>
 			</ul>
 			<h4><?php _e( '@TODO', 'digital-nomad' ); ?></h4>
 			<ul>

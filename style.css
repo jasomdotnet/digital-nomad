@@ -16,7 +16,6 @@ html, body {
     line-height: 1.5;
 }
 html, body, input, textarea, select, li, label {
-    /*font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;*/
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 100%;
 }
@@ -29,9 +28,7 @@ body {
     background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
-    /*line-height: 130%;*/
     font-weight: 700;
-    /*letter-spacing: -0.02em;*/
     color: #000;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -39,7 +36,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     text-decoration: none;
 }
 code {
-    /*background: #ff0;*/
     padding: 0.125em;
     border-radius: 0.125em;
     font-size: 1.188em;
@@ -71,21 +67,15 @@ blockquote p:last-child {
     background-color: rgba(0,0,0,0.5);
 }
 .intended_front_page #headelements {
-    /* display: flex; variant2*/
-    /*min-height: 100vh; variant2 */
     display: table;
-    height: 100vh; /* variant1*/
-    width: 100%; /* variant1*/
+    height: 100vh;
+    width: 100%;
 }
 .intended_front_page #cell {
-
-    /*display: flex; variant2*/
-    /*justify-content: center; variant2*/
-    /*flex-direction: column; variant2*/
     text-align: center;
     margin: 0 auto;
     display: table-cell;
-    vertical-align: middle; /* variant1*/
+    vertical-align: middle;
 }
 body:not(.intended_front_page) #jump_down  {
     display: none;
@@ -725,7 +715,7 @@ table th {
     }
 }
 
-/* Ultra large devices (large desktops, 1200px and up)*/ 
+/* Large devices (large desktops, 1200px and up)*/ 
 @media (min-width: 1480px) { 
     html, body, input, textarea, select, li, label {
         font-size: 115%;
