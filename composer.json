@@ -1,0 +1,22 @@
+{
+    "name": "jasomdotnet/digital-nomad",
+    "description": "Digital Nomad WordPress theme",
+    "keywords": [
+	"wordpress",
+	"theme",
+	"digital nomad",
+	"nomad"
+    ],
+    "homepage": "https://github.com/jasomdotnet/digital-nomad",
+    "license": "MIT",
+    "authors": [
+	{
+	    "name": "Jasom Dotnet",
+	    "homepage": "https://www.jasom.net",
+	    "role": "Developer"
+	}
+    ],
+    "require": {
+	"php": ">=5.6.0"
+    }
+}
