@@ -15,20 +15,7 @@ require_once get_template_directory() . '/inc/theme-panel.php';
  * AJAX functions
  */
 require_once get_template_directory() . '/inc/ajax-functions.php';
-// helpers #
-if ( !function_exists( 'pa' ) ) {
 
-	/**
-	 * Function for development and debugging
-	 */
-	function pa( $data ) {
-		print '<hr><pre>';
-		print_r( $data );
-		print '</pre><hr>';
-	}
-
-}
-// helpers ends #
 // enqueues #
 if ( !function_exists( 'digitalnomad_add_styles' ) ) {
 
@@ -174,7 +161,7 @@ if ( !function_exists( 'digitalnomad_the_date' ) ) {
 	 * Custom the_date function
 	 */
 	function digitalnomad_the_date() {
-		echo digitalnomad_get_the_date();
+		echo digitalnomad_get_the_date(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 }
@@ -186,9 +173,9 @@ if ( !function_exists( 'digitalnomad_get_the_date' ) ) {
 	 */
 	function digitalnomad_get_the_date() {
 		$code		 = '';
-		$published	 = get_the_date( 'U' );
-		$updated	 = get_the_modified_time( 'U' );
-		$date_format = get_option( 'date_format' );
+		$published	 = esc_attr( get_the_date( 'U' ) );
+		$updated	 = esc_attr( get_the_modified_time( 'U' )  );
+		$date_format = esc_attr( get_option( 'date_format' )  );
 
 		$code .= '<time class="published" datetime="' . date( 'c', $published ) . '">' . date( $date_format, $published ) . '</time>';
 		if ( $published != $updated ) {
@@ -210,7 +197,8 @@ if ( !function_exists( 'digitalnomad_get_the_date_ago' ) ) {
 		$code		 = '';
 		$published	 = get_the_date( 'U' );
 		$date_format = get_option( 'date_format' );
-		$ago		 = sprintf( _x( '%s ago', '%s = human-readable time difference', 'digital-nomad' ), human_time_diff( $published, current_time( 'timestamp' ) ) );
+		/* translators: %s: time difference in human-readable way */
+		$ago		 = sprintf( esc_html__( '%s ago', 'digital-nomad' ), human_time_diff( $published, current_time( 'timestamp' ) ) );
 		$code		 .= '<time class="published" datetime="' . date( 'c', $published ) . '" title="' . date( $date_format, $published ) . '">' . $ago . '</time>';
 
 		return $code;
@@ -400,22 +388,22 @@ if ( !function_exists( 'digitalnomad_the_posts_navigation' ) ) {
 		$prev_title	 = empty( $previous_post->post_title ) ? digitalnomad_notitle() : esc_attr( $previous_post->post_title );
 
 		$code		 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . esc_url( digitalnomad_pager_bg_image_src( $previous_post, 'prev' ) ) . '\');">';
-		$code		 .= '<a href="' . esc_url( get_the_permalink( $previous_post ) ) . '" title="' . $prev_title . '" class="post_nav_link post_nav_prev text_shadow" rel="prev">';
-		$code		 .= '<div class="preview_inside">' . $prev_title . '</div>';
+		$code		 .= '<a href="' . esc_url( get_the_permalink( $previous_post ) ) . '" title="' . esc_attr__( 'Previous post:',  'digital-nomad' ) . ' ' . $prev_title . '" class="post_nav_link post_nav_prev text_shadow" rel="prev">';
+		$code		 .= '<div class="preview_inside">&laquo; ' . $prev_title . '</div>';
 		$code		 .= '</a>';
 		$code		 .= '</div>';
 		// next
 		$next_title	 = empty( $next_post->post_title ) ? digitalnomad_notitle() : esc_attr( $next_post->post_title );
 
 		$code	 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . esc_url( digitalnomad_pager_bg_image_src( $next_post, 'next' ) ) . '\');">';
-		$code	 .= '<a href="' . esc_url( get_the_permalink( $next_post ) ) . '" title="' . $next_title . '" class="post_nav_link post_nav_next text_shadow" rel="next">';
-		$code	 .= '<div class="preview_inside">' . $next_title . '</div>';
+		$code	 .= '<a href="' . esc_url( get_the_permalink( $next_post ) ) . '" title="' . esc_attr__( 'Next post:',  'digital-nomad' ) . ' ' . $next_title . '" class="post_nav_link post_nav_next text_shadow" rel="next">';
+		$code	 .= '<div class="preview_inside">' . $next_title . ' &raquo;</div>';
 		$code	 .= '</a>';
 		$code	 .= '</div>';
 
 		$code .= '</nav>';
 
-		echo $code;
+		echo $code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 }
@@ -500,7 +488,7 @@ if ( !function_exists( 'digitalnomad_go_up_for_footer' ) ) {
 	 */
 	function digitalnomad_go_up_for_footer() {
 		?>
-		<a href="#header" class="gp" title="<?php _e( '&uarr; Up', 'digital-nomad' ); ?>"><?php _e( 'Up &uarr; ', 'digital-nomad' ); ?></a>
+		<a href="#header" class="gp" title="<?php esc_attr_e( '&uarr; Up', 'digital-nomad' ); ?>"><?php esc_html_e( 'Up &uarr; ', 'digital-nomad' ); ?></a>
 		<?php
 	}
 
@@ -516,9 +504,13 @@ if ( !function_exists( 'digitalnomad_basic_footer_text' ) ) {
 	function digitalnomad_basic_footer_text() {
 		?>
 		<p>
-			<?php echo date( 'Y', time() ); ?> &copy; <?php bloginfo( 'name' ); ?>.
-			<?php printf( __( 'Powered by %s.', 'digital-nomad' ), '<a href="https://wordpress.org/" target="_blank">WordPress</a>' ); ?>
-			<?php printf( __( 'Themed by %s.', 'digital-nomad' ), '<a href="https://www.jasom.net" target="_blank">Jasom Dotnet</a>' ); ?>
+			<?php echo esc_html( date( 'Y', time() ) ); ?> &copy; <?php bloginfo( 'name' ); ?>.
+			<?php
+			          /* translators: %s: WordPress homepage link */
+			          printf( esc_html__( 'Powered by %s.', 'digital-nomad' ), '<a href="https://wordpress.org/" target="_blank">WordPress</a>' ); ?>
+			<?php
+			          /* translators: %s: credit link */
+			          printf( esc_html__( 'Themed by %s.', 'digital-nomad' ), '<a href="https://www.jasom.net" target="_blank">Jasom Dotnet</a>' ); ?>
 		</p>
 		<?php
 	}
@@ -634,7 +626,7 @@ if ( !function_exists( 'digitalnomad_add_post_archive_to_page' ) ) {
 					digitalnomad_the_archive_table( $archive );
 				} else {
 
-					echo '<p>' . __( 'There are no posts.', 'digital-nomad' ) . '</p>' . PHP_EOL;
+					echo '<p>' . esc_html__( 'There are no posts.', 'digital-nomad' ) . '</p>' . PHP_EOL;
 				}
 
 				/* Restore original Post Data */
@@ -660,18 +652,18 @@ if ( !function_exists( 'digitalnomad_the_archive_table' ) ) {
 	 */
 	function digitalnomad_the_archive_table( $data, $category = true, $before = null, $after = null ) {
 
-		echo $before ? $before . PHP_EOL : PHP_EOL;
+		echo esc_html( $before ? $before . PHP_EOL : PHP_EOL );
 		echo '<div class="archive_table">' . PHP_EOL;
 
 		foreach ( $data as $year => $posts ) {
 
-			echo PHP_EOL . '<div class="archive_row"><div class="archive_year archive_cell"><h3 class="archive_year_title">' . $year . '</h3></div></div>' . PHP_EOL . PHP_EOL;
+			echo PHP_EOL . '<div class="archive_row"><div class="archive_year archive_cell"><h3 class="archive_year_title">' . esc_html( $year ) . '</h3></div></div>' . PHP_EOL . PHP_EOL;
 
 			foreach ( $posts as $post_id => $post ) {
 
 				echo '<div class="archive_row">' . PHP_EOL;
 
-				echo ' <div class="archive_date archive_cell">' . $post[ 'post_date' ] . '</div><!-- /archive_date -->' . PHP_EOL;
+				echo ' <div class="archive_date archive_cell">' . esc_html( $post[ 'post_date' ] ) . '</div><!-- /archive_date -->' . PHP_EOL;
 
 				if ( $category ) {
 
@@ -683,19 +675,20 @@ if ( !function_exists( 'digitalnomad_the_archive_table' ) ) {
 						foreach ( $cats as $cat ) {
 							$cats_html[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . get_cat_name( $cat->term_id ) . '</a>';
 						}
-						echo implode( ', ', $cats_html );
+						// already escaped in get_category_link() and get_cat_name() functions
+						echo implode( ', ', $cats_html ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 					echo '</div><!-- /archive_categoty -->' . PHP_EOL;
 				}
 				$title = empty( $post[ 'title' ] ) ? digitalnomad_notitle() : $post[ 'title' ];
 
-				echo ' <div class="archive_post archive_cell"><a href="' . $post[ 'link' ] . '" title="' . $title . '">' . $title . '</a></div><!-- /archive_post -->' . PHP_EOL;
+				echo ' <div class="archive_post archive_cell"><a href="' . esc_url( $post[ 'link' ] ) . '" title="' . esc_attr( $title ) . '">' . esc_html( $title ) . '</a></div><!-- /archive_post -->' . PHP_EOL;
 
 				echo '</div><!-- /archive_row -->' . PHP_EOL;
 			}
 		}
 		echo '</div><!-- /archive_table -->' . PHP_EOL;
-		echo $after ? $after . PHP_EOL : PHP_EOL;
+		echo esc_html( $after ? $after . PHP_EOL : PHP_EOL );
 	}
 
 }
@@ -726,7 +719,7 @@ if ( !function_exists( 'digitalnomad_get_latest_article' ) ) {
 		$recent_post = wp_get_recent_posts( $args, ARRAY_A );
 
 		if ( !empty( $recent_post[ 0 ] ) ) {
-			return '<a href="' . esc_url( get_permalink( $recent_post[ 0 ][ 'ID' ] ) ) . '">' . $recent_post[ 0 ][ 'post_title' ] . '</a>';
+			return '<a href="' . esc_url( get_permalink( $recent_post[ 0 ][ 'ID' ] ) ) . '">' . esc_html( $recent_post[ 0 ][ 'post_title' ] ) . '</a>';
 		}
 		return null;
 	}
@@ -763,7 +756,8 @@ if ( !function_exists( 'digitalnomad_change_search_posts_per_page' ) ) {
 	 */
 	function digitalnomad_change_search_posts_per_page( $query ) {
 		if ( $query->is_search ) {
-			$query->query_vars[ 'posts_per_page' ] = -1;
+			// Paging disabled because Digital nomad theme is designed for personal blogs with a few dozen articles, not a big portals with thousand of posts
+			$query->query_vars[ 'posts_per_page' ] = -1; // phpcs:ignore WPThemeReview.CoreFunctionality.PostsPerPage.posts_per_page_posts_per_page
 		}
 
 		return $query;
@@ -806,13 +800,14 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 				$moderation_note = __( 'Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'digital-nomad' );
 			}
 			?>
-			<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+                <<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
 				<header class="comment-meta">
 					<h4 class="comment-author time_permalink">
 						<?php
-						printf( __( '%s <span class="says">said on</span>', 'digital-nomad' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) ) );
+						// this function is copied from WordPress core
+						printf( esc_html__( '%s <span class="says">said on</span>', 'digital-nomad' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) ) ); // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 						?>
 
 
@@ -820,14 +815,14 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 							<time datetime="<?php comment_time( 'c' ); ?>">
 								<?php
 								/* translators: 1: Comment date, 2: Comment time. */
-								printf( __( '%1$s at %2$s', 'digital-nomad' ), get_comment_date( '', $comment ), get_comment_time() );
+								printf( esc_html__( '%1$s at %2$s', 'digital-nomad' ), get_comment_date( '', $comment ), get_comment_time() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								?>
 							</time>
 						</a>
 					</h4><!-- .comment-author -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-						<div class="comment-awaiting-moderation"><em><?php echo $moderation_note; ?></em></div>
+						<div class="comment-awaiting-moderation"><em><?php echo $moderation_note; ?></em></div><?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<?php endif; ?>
 				</header><!-- .comment-meta -->
 
@@ -836,7 +831,7 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 				</div><!-- .comment-content -->
 
 				<footer class="comment-metadata">
-					<?php do_action( 'comment_metadata_before' ); ?>
+					<?php do_action( 'comment_metadata_before' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound ?>
 					<?php
 					comment_reply_link(
 					array_merge(
@@ -851,7 +846,7 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 					);
 					?>
 					<?php edit_comment_link( __( 'Edit', 'digital-nomad' ), '<span class="edit">', '</span>' ); ?>
-					<?php do_action( 'comment_metadata_after' ); ?>
+					<?php do_action( 'comment_metadata_after' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound ?>
 				</footer><!-- .comment-metadata -->
 
 			</article><!-- .comment-body -->
@@ -876,7 +871,7 @@ if ( !function_exists( 'digitalnomad_login_logo' ) ) {
 			?>
 			<style type="text/css">
 				#login h1 a, .login h1 a {
-					background-image: url('<?php echo wp_get_attachment_image_url( $custom_logo_id, 'medium' ); ?>');
+					background-image: url('<?php echo esc_url( wp_get_attachment_image_url( $custom_logo_id, 'medium' ) ); ?>');
 					background-size: 84px 84px;
 					height: 84px;
 					width: 84px;

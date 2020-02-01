@@ -58,6 +58,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 		$wp_customize->add_control(
 		new WP_Customize_Control( $wp_customize, 'digitalnomad_archive_page', array(
 			'label'			 => __( 'Archive Page', 'digital-nomad' ),
+			/* translators: %s: admin url pointing to archive for post type page */
 			'description'	 => sprintf( __( 'Select a <a href="%s">static page</a> which will serve as archive for posts.', 'digital-nomad' ), esc_url( admin_url( 'edit.php?post_type=page' ) ) ),
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_archive_page',

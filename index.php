@@ -9,7 +9,8 @@
 			while ( have_posts() ) :
 
 				the_post();
-				echo digitalnomad_post_preview_layout();
+				// digitalnomad_post_preview_layout function is delivered already escaped
+				echo digitalnomad_post_preview_layout(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 			endwhile;
 
@@ -21,7 +22,7 @@
 		?>
 	</div>
 	<span id="sentinel"></span>
-<?php echo digitalnomad_posts_nav_link(); ?>
+<?php echo digitalnomad_posts_nav_link(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </section><!-- #main -->
 <?php
 get_sidebar();

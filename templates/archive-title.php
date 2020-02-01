@@ -11,25 +11,26 @@
 			the_title();
 
 		elseif ( is_search() ) :
-			printf( __( 'Search Results for: %s', 'digital-nomad' ), '<em>' . get_search_query() . '</em>' );
+			/* translators: %s: search query string */
+			printf( esc_html__( 'Search Results for: %s', 'digital-nomad' ), '<em>' . get_search_query() . '</em>' );
 
 		elseif ( is_404() ):
-			_e( 'Page not found', 'digital-nomad' );
+			 esc_html_e( 'Page not found', 'digital-nomad' );
 
 		elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-			_e( 'Asides', 'digital-nomad' );
+			 esc_html_e( 'Asides', 'digital-nomad' );
 
 		elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-			_e( 'Images', 'digital-nomad' );
+			 esc_html_e( 'Images', 'digital-nomad' );
 
 		elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-			_e( 'Videos', 'digital-nomad' );
+			 esc_html_e( 'Videos', 'digital-nomad' );
 
 		elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-			_e( 'Quotes', 'digital-nomad' );
+			 esc_html_e( 'Quotes', 'digital-nomad' );
 
 		elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-			_e( 'Links', 'digital-nomad' );
+			 esc_html_e( 'Links', 'digital-nomad' );
 
 		else :
 			echo '';
@@ -41,13 +42,13 @@
 	if ( is_category() ) :
 		$category_description = category_description();
 		if ( !empty( $category_description ) ) :
-			echo apply_filters( 'digitalnomad_category_archive_meta', '<div class="header_text archive_desc">' . $category_description . '</div>' );
+			echo wp_kses_post( apply_filters( 'digitalnomad_category_archive_meta', '<div class="header_text archive_desc">' . $category_description . '</div>' ) );
 		endif;
 
 	elseif ( is_tag() ) :
 		$tag_description = tag_description();
 		if ( !empty( $tag_description ) ) :
-			echo apply_filters( 'digitalnomad_tag_archive_meta', '<div class="header_text archive_desc">' . $tag_description . '</div>' );
+			echo wp_kses_post( apply_filters( 'digitalnomad_tag_archive_meta', '<div class="header_text archive_desc">' . $tag_description . '</div>' ) );
 		endif;
 
 	endif;

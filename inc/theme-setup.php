@@ -126,5 +126,5 @@ if ( !function_exists( 'digitalnomad_theme_features' ) ) {
 add_action( 'after_setup_theme', 'digitalnomad_theme_features' );
 
 if ( !isset( $content_width ) ) {
-	$content_width = 1200;
+	$content_width = 1200; // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
 }

@@ -9,13 +9,13 @@ if ( ! function_exists( 'digitalnomad_infinite_load' ) ) {
 
 	$arr = array();
 
-	$page		 = digitalnomad_sanitize_validate_page( $_POST[ 'page' ] );
-	$what_kind	 = digitalnomad_sanitize_what_kind( $_POST[ 'what_kind' ] );
+	$page		 = !empty( $_POST['page'] ) ? digitalnomad_sanitize_validate_page( wp_unslash( $_POST[ 'page' ] ) ) : 2; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	$what_kind	 = !empty( $_POST['what_kind'] ) ? digitalnomad_sanitize_what_kind( wp_unslash( $_POST[ 'what_kind' ] ) ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 
 	// extends query array
 	if ( $what_kind == 'archive' ) {
-	    $post_type = digitalnomad_sanitize_cpt_for_archive( $_POST[ 'object' ] );
+	    $post_type = !empty( $_POST[ 'object' ] ) ? digitalnomad_sanitize_cpt_for_archive( wp_unslash( $_POST[ 'object' ] ) ) : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 	    if ( $post_type ) {
 		$args = array(
 		    'post_status'	 => 'publish',
@@ -27,7 +27,7 @@ if ( ! function_exists( 'digitalnomad_infinite_load' ) ) {
 		$args[ 'post__in' ] = array( 0 );
 	    }
 	} elseif ( $what_kind == 'taxonomy' ) {
-	    $term = digitalnomad_sanitize_cpt_for_taxonomy( $_POST[ 'object' ] );
+	    $term = !empty( $_POST[ 'object' ] ) ? digitalnomad_sanitize_cpt_for_taxonomy( wp_unslash( $_POST[ 'object' ] ) ) : false; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 	    if ( $term ) {
 		$args = array(
 		    'post_status'	 => 'publish',

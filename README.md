@@ -49,10 +49,6 @@ Default previous pager image, default-previous-pager-675708-pxhere-com.jpg
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://pxhere.com/en/photo/675708
 
-## Inspiration
-
-Digital Nomad Theme was inspired by Pieter's https://nomadlist.com and coded out by Jasom Dotnet from https://wperf.com.
-
 ## Wise idea for the end
 
 It's not in theme, it's in content. But good theme also helps...

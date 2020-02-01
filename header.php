@@ -8,7 +8,7 @@
     </head>
 
     <body <?php body_class(); ?>>
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digital-nomad' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'digital-nomad' ); ?></a>
 		<?php do_action( 'digitalnomad_before_header_opening' ); ?>
 		<header id="placeholder" class="basic_bg">
 			<div id="header" class="basic_bg"> 
@@ -18,11 +18,11 @@
 							<div class="stabilize">
 								<?php get_template_part( 'templates/header', 'logo' ); ?>
 								<?php get_template_part( 'templates/header', 'text' ); ?>
-								<noscript id="general"><?php _e( 'Some features may not work without JavaScript', 'digital-nomad' ); ?></noscript>
+								<noscript id="general"><?php esc_html_e( 'Some features may not work without JavaScript', 'digital-nomad' ); ?></noscript>
 							</div>
 							<?php if ( is_front_page() ): ?>
 								<div id="jump_down">
-									<a href="#content"><?php _e( 'Jump Down', 'digital-nomad' ); ?></a>
+									<a href="#content"><?php esc_html_e( 'Jump Down', 'digital-nomad' ); ?></a>
 								</div>
 							<?php endif; ?>
 						</div>

@@ -4,7 +4,7 @@ Theme URI: https://www.jasom.net/digital-nomad-wordpress-theme/
 Author: Jasom Dotnet
 Author URI: https://www.jasom.net
 Description: It's not in theme, it's in content! But good theme also helps...
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, custom-background, custom-header, custom-logo, featured-image-header, featured-images, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready
@@ -93,7 +93,7 @@ body:not(.intended_front_page) #jump_down  {
     padding-bottom:  0;
 }
 .logo_link {
-    outline: 0;
+    /*outline: 0;*/
     width: 10em;
     height: 10em;
     margin: 0 auto;
@@ -602,6 +602,7 @@ figure {
     margin: 0;
 }
 iframe[src*="youtube.com"] {
+    width: 100%;
 }
 figure.wp-block-embed.is-type-video {
     position: relative;
