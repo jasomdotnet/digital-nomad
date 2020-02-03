@@ -8,6 +8,7 @@
     </head>
 
     <body <?php body_class(); ?>>
+		<?php wp_body_open(); ?>
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'digital-nomad' ); ?></a>
 		<?php do_action( 'digitalnomad_before_header_opening' ); ?>
 		<header id="placeholder" class="basic_bg">

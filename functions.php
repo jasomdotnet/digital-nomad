@@ -426,14 +426,14 @@ if ( !function_exists( 'digitalnomad_posts_nav_link' ) ) {
 			$code .= '<nav class="post_nav single-' . $single_pager . '">';
 
 			if ( $previous_posts_link ) :
-				$code	 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . digitalnomad_pager_bg_image_src( null, 'prev' ) . '\');">';
+				$code	 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . esc_url( digitalnomad_pager_bg_image_src( null, 'prev' ) ) . '\');">';
 				$code	 .= $previous_posts_link;
 				$code	 .= '</div>';
 
 			endif;
 
 			if ( $next_posts_link ) :
-				$code	 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . digitalnomad_pager_bg_image_src( null, 'next' ) . '\');">';
+				$code	 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . esc_url( digitalnomad_pager_bg_image_src( null, 'next' ) ) . '\');">';
 				$code	 .= $next_posts_link;
 				$code	 .= '</div>';
 
@@ -673,7 +673,7 @@ if ( !function_exists( 'digitalnomad_the_archive_table' ) ) {
 					if ( !empty( $cats ) ) {
 						$cats_html = array();
 						foreach ( $cats as $cat ) {
-							$cats_html[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . get_cat_name( $cat->term_id ) . '</a>';
+							$cats_html[] = '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '">' . esc_html( get_cat_name( $cat->term_id ) ) . '</a>';
 						}
 						// already escaped in get_category_link() and get_cat_name() functions
 						echo implode( ', ', $cats_html ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -800,14 +800,14 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 				$moderation_note = __( 'Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'digital-nomad' );
 			}
 			?>
-                <<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+                <<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
 				<header class="comment-meta">
 					<h4 class="comment-author time_permalink">
 						<?php
 						// this function is copied from WordPress core
-						printf( esc_html__( '%s <span class="says">said on</span>', 'digital-nomad' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) ) ); // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+						printf( wp_kses_post( '%s <span class="says">said on</span>', 'digital-nomad' ), sprintf( '<b class="fn">%s</b>', wp_kses_post( get_comment_author_link( $comment ) ) ) ); // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 						?>
 
 
@@ -815,7 +815,7 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 							<time datetime="<?php comment_time( 'c' ); ?>">
 								<?php
 								/* translators: 1: Comment date, 2: Comment time. */
-								printf( esc_html__( '%1$s at %2$s', 'digital-nomad' ), get_comment_date( '', $comment ), get_comment_time() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								printf( esc_html__( '%1$s at %2$s', 'digital-nomad' ), esc_attr( get_comment_date( '', $comment ) ), esc_attr( get_comment_time() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								?>
 							</time>
 						</a>

@@ -61,21 +61,21 @@ if ( !function_exists( 'digitalnomad_panel_content' ) ) {
 			<h3><?php  esc_html_e( 'Recommended Plugins', 'digital-nomad' ); ?></h3>
 			<div class="has-2-columns is-fullwidth">
 				<div class="column">
-					<h4><a href="https://wordpress.org/plugins/resmushit-image-optimizer/"><?php  esc_html_e( 'reSmush.it Image Optimizer', 'digital-nomad' ); ?></a></h4>
+					<h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/resmushit-image-optimizer/' ); ?>"><?php  esc_html_e( 'reSmush.it Image Optimizer', 'digital-nomad' ); ?></a></h4>
 					<p><?php  esc_html_e( 'Digital Nomad theme relies heavy on images. reSmush.it is free service providing image size reduction based on several advanced algorithms. The API accept JPG, PNG and GIF files up to 5MB. Set reSmush,it quality to 82.', 'digital-nomad' ); ?></p>
 				</div>
 				<div class="column">
-					<h4><a href="https://wordpress.org/plugins/wordpress-seo/"><?php  esc_html_e( 'Yoast SEO', 'digital-nomad' ); ?></a></h4>
+					<h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/wordpress-seo/' ); ?>"><?php  esc_html_e( 'Yoast SEO', 'digital-nomad' ); ?></a></h4>
 					<p><?php  esc_html_e( 'My favorite option when it comes to SEO plugin for WordPress. Yoast SEO generates sitemap.xml, sets page titles, creates metatags, etc.', 'digital-nomad' ); ?></p>
 				</div>
 			</div>
 			<div class="has-2-columns is-fullwidth">
 				<div class="column">
-					<h4><a href="https://wordpress.org/plugins/code-syntax-block/"><?php  esc_html_e( 'Code Syntax Block', 'digital-nomad' ); ?></a></h4>
+					<h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/code-syntax-block/' ); ?>"><?php  esc_html_e( 'Code Syntax Block', 'digital-nomad' ); ?></a></h4>
 					<p><?php  esc_html_e( 'A plugin to extend Gutenberg code block with syntax highlighting.', 'digital-nomad' ); ?></p>
 				</div>
 				<div class="column">
-					<h4><a href="https://wordpress.org/plugins/wp-super-cache/"><?php  esc_html_e( 'WP Super Cache', 'digital-nomad' ); ?></a></h4>
+					<h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/wp-super-cache/' ); ?>"><?php  esc_html_e( 'WP Super Cache', 'digital-nomad' ); ?></a></h4>
 					<p><?php  esc_html_e( 'Don not leave your site without enabled cache. WP Super Cache from Automattic does the job well.', 'digital-nomad' ); ?></p>
 				</div>
 			</div>
@@ -87,13 +87,13 @@ if ( !function_exists( 'digitalnomad_panel_content' ) ) {
 					<p><?php  esc_html_e( 'If you like Digital Nomad, review the theme on WordPress.org. Leave a review even if you don\'t like it.', 'digital-nomad' ); ?></p>
 				</div>
 				<div class="column">
-					<h4><a href="https://www.jasom.net/contact/"><?php  esc_html_e( 'Feature Requests', 'digital-nomad' ); ?></a></h4>
+					<h4><a href="<?php echo esc_url( 'https://www.jasom.net/contact/' ); ?>"><?php  esc_html_e( 'Feature Requests', 'digital-nomad' ); ?></a></h4>
 					<p><?php  esc_html_e( 'Send feature request for Digital Nomad theme.', 'digital-nomad' ); ?></p>
 				</div>
 			</div>
 			<div class="has-2-columns is-fullwidth">
 				<div class="column">
-					<h4><a href="https://twitter.com/jasomdotnet"><?php  esc_html_e( 'Follow me on Twitter', 'digital-nomad' ); ?></a></h4>
+					<h4><a href="<?php echo esc_url( 'https://twitter.com/jasomdotnet' ); ?>"><?php  esc_html_e( 'Follow me on Twitter', 'digital-nomad' ); ?></a></h4>
 					<p><?php  esc_html_e( 'If you like my work, follow me on Twitter.', 'digital-nomad' ); ?></p>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
 Stable tag: 1.0
-Version: 1.0.1
+Version: 1.0.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -73,5 +73,15 @@ Source: https://pxhere.com/en/photo/1562371
 = 1.0.1 =
 * Small bugs fixed
 * Released: February 1, 2020
+
+= 1.0.2 =
+* Added wp_open_body()
+* Added url_esc()
+* Small bugs fixed
+* Released: February 3, 2020
+
+= 1.0.3 =
+* Fixed comment escaping
+* Released: February 3, 2020
 
 Initial release
