@@ -8,11 +8,11 @@ $alt			 = get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
 
 	<?php if ( !empty( $custom_logo_id ) ): ?>
 
-    <img src="<?php echo esc_url( $custom_logo_url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" class="logo">
+		<img src="<?php echo esc_url( $custom_logo_url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $alt ); ?>" class="logo">
 
 	<?php else: ?>
 
-		<?php echo get_avatar( 1, 200, 'mp', $alt, array( 'class' => 'logo' ) ); ?>
+		<?php echo get_avatar( 1, 200, 'mp', $alt, array( 'class' => 'logo', 'extra_attr' => 'title=\'' . esc_attr( $alt ) . '\'' ) ); ?>
 
 	<?php endif; ?>
 
