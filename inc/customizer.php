@@ -25,7 +25,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 			'default'			 => '',
 			'type'				 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'absint',
+			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_footer_image', array(
@@ -39,7 +39,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 			'default'			 => '',
 			'type'				 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'absint',
+			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_default_feature_image', array(
@@ -101,7 +101,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 			'default'			 => '',
 			'type'				 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'absint',
+			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_previous_bg', array(
@@ -116,7 +116,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 			'default'			 => '',
 			'type'				 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'absint',
+			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_next_bg', array(
@@ -164,3 +164,30 @@ if ( !function_exists( 'digitalnomad_sanitize_archive_page' ) ) {
 	}
 
 }
+
+if ( !function_exists( 'digitalnomad_sanitize_image' ) ) {
+
+	/**
+	 * Sanitize uploaded image
+	 * https://divpusher.com/blog/wordpress-customizer-sanitization-examples/#file
+	 * @param type $value
+	 * @return type
+	 */
+	function digitalnomad_sanitize_image( $file, $setting ) {
+            
+		//allowed file types
+		$mimes = array(
+                    		'jpg|jpeg|jpe' => 'image/jpeg',
+			'gif'          => 'image/gif',
+			'png'          => 'image/png'
+		);
+
+		//check file type from file name
+		$file_ext = wp_check_filetype( $file, $mimes );
+
+		//if file has a valid mime type return it, otherwise return default
+		 return ( $file_ext['ext'] ? $file : $setting->default );                 
+	}
+
+}
+

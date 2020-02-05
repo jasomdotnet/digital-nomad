@@ -107,7 +107,8 @@ if ( !function_exists( 'digitalnomad_theme_features' ) ) {
 						'custom_html',
 						array(
 							'title'		 => __( 'About like menu', 'digital-nomad' ),
-							'content'	 => sprintf( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis posuere massa, ac porta risus. Sed elit turpis, imperdiet <a href="%s">home</a> lectus vel, eleifend tempor diam. <a href="%s">Archive</a> finibus aliquam est, sed tincidunt ipsum congue et. Integer a gravida enim, vitae tempor leo.', home_url(), home_url() . '/archive/' ),
+							/* translators: %s: home_url pointing to front page and archive page */
+							'content'	 => sprintf( __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis posuere massa, ac porta risus. Sed elit turpis, imperdiet <a href="%1$s">home</a> lectus vel, eleifend tempor diam. <a href="%2$s">Archive</a> finibus aliquam est, sed tincidunt ipsum congue et. Integer a gravida enim, vitae tempor leo.', 'digital-nomad' ), home_url(), home_url() . '/archive/' ),
 						)
 					)
 				)

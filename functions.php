@@ -385,19 +385,19 @@ if ( !function_exists( 'digitalnomad_the_posts_navigation' ) ) {
 
 		$code		 .= '<nav class="post_nav single-' . $single_pager . '">';
 		// prev
-		$prev_title	 = empty( $previous_post->post_title ) ? digitalnomad_notitle() : esc_attr( $previous_post->post_title );
+		$prev_title	 = empty( $previous_post->post_title ) ? digitalnomad_notitle() : $previous_post->post_title;
 
 		$code		 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . esc_url( digitalnomad_pager_bg_image_src( $previous_post, 'prev' ) ) . '\');">';
-		$code		 .= '<a href="' . esc_url( get_the_permalink( $previous_post ) ) . '" title="' . esc_attr__( 'Previous post:',  'digital-nomad' ) . ' ' . $prev_title . '" class="post_nav_link post_nav_prev text_shadow" rel="prev">';
-		$code		 .= '<div class="preview_inside">&laquo; ' . $prev_title . '</div>';
+		$code		 .= '<a href="' . esc_url( get_the_permalink( $previous_post ) ) . '" title="' . esc_attr__( 'Previous post:',  'digital-nomad' ) . ' ' . esc_attr( $prev_title ) . '" class="post_nav_link post_nav_prev text_shadow" rel="prev">';
+		$code		 .= '<div class="preview_inside">&laquo; ' . esc_html( $prev_title ) . '</div>';
 		$code		 .= '</a>';
 		$code		 .= '</div>';
 		// next
-		$next_title	 = empty( $next_post->post_title ) ? digitalnomad_notitle() : esc_attr( $next_post->post_title );
+		$next_title	 = empty( $next_post->post_title ) ? digitalnomad_notitle() : $next_post->post_title;
 
 		$code	 .= '<div class="preview_content basic_bg" style="background-image: url(\'' . esc_url( digitalnomad_pager_bg_image_src( $next_post, 'next' ) ) . '\');">';
-		$code	 .= '<a href="' . esc_url( get_the_permalink( $next_post ) ) . '" title="' . esc_attr__( 'Next post:',  'digital-nomad' ) . ' ' . $next_title . '" class="post_nav_link post_nav_next text_shadow" rel="next">';
-		$code	 .= '<div class="preview_inside">' . $next_title . ' &raquo;</div>';
+		$code	 .= '<a href="' . esc_url( get_the_permalink( $next_post ) ) . '" title="' . esc_attr__( 'Next post:',  'digital-nomad' ) . ' ' . esc_attr( $next_title ) . '" class="post_nav_link post_nav_next text_shadow" rel="next">';
+		$code	 .= '<div class="preview_inside">' . esc_html( $next_title ) . ' &raquo;</div>';
 		$code	 .= '</a>';
 		$code	 .= '</div>';
 

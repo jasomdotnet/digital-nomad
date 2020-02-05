@@ -18,7 +18,7 @@
 					esc_html_e( 'Goob job, you found a page that doesn\'t exist.', 'digital-nomad' );
 					$article = digitalnomad_get_latest_article(); // data for article already escaped in digitalnomad_get_latest_article() function
 					if ( !empty( $article ) ) {
-						echo ' ' . esc_html( __( 'Try to use search form below or read my latest post:', 'digital-nomad' ) ) . ' ' . $article; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo ' ' . esc_html__( 'Try to use search form below or read my latest post:', 'digital-nomad' ) . ' ' . $article; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 					?>
 				</p>
