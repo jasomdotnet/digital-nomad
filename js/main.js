@@ -68,6 +68,7 @@
 		action: 'digitalnomad_infinite_load',
 		object: postTypeObject,
 		what_kind: whatKind,
+		nonce: ajaxNonce,
 	    }
 
 	    xhr.send( encodeObjectForPost( msg ) );

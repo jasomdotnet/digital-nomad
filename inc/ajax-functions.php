@@ -6,6 +6,10 @@ if ( ! function_exists( 'digitalnomad_infinite_load' ) ) {
      * Main AJAX function
      */
     function digitalnomad_infinite_load() {
+        
+	if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+	    exit();
+	}
 
 	$arr = array();
 

@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.0.5
+Version: 1.0.6
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ For more information about Digital Nomad WordPress theme please go to https://ww
 
 == Copyright ==
 
-Digital Nomad WordPress Theme, Copyright 2019 Wperf.com
+Digital Nomad WordPress Theme, Copyright 2019 Jasom.net
 Digital Nomad is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -92,5 +92,10 @@ Source: https://pxhere.com/en/photo/1562371
 * Better image sanitization for customizer
 * Small bugs fixed
 * Released: February 5, 2020
+
+= 1.0.6 =
+* Added ajax nonce check
+* Small bugs fixed
+* Released: March 2, 2020
 
 Initial release

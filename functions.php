@@ -141,6 +141,7 @@ if ( !function_exists( 'digitalnomad_config_for_main_js' ) ) {
 		if ( get_theme_mod( 'digitalnomad_infinite_scroll', true ) && ( is_archive() || is_home() ) ) {
 
 			$code	 .= 'var postUrl = "' . admin_url( 'admin-ajax.php' ) . '";' . PHP_EOL;
+			$code	 .= 'var ajaxNonce = "' . wp_create_nonce( 'ajax-nonce' ) . '";' . PHP_EOL;
 			$code	 .= 'var postTypeObject = "' . digitalnomad_get_archive_post_type_object() . '";' . PHP_EOL; // includes/ajax-functions.php
 			$code	 .= 'var whatKind = "' . digitalnomad_get_what_kind_details() . '";' . PHP_EOL; // includes/ajax-functions.php
 			$code	 .= 'var rescrollMsg = "' . __( 'Rescroll to load news posts.', 'digital-nomad' ) . '";' . PHP_EOL;
@@ -857,62 +858,3 @@ if ( !class_exists( 'Digitalnomad_Walker_Comment' ) ) {
 
 }
 // comments end #
-// custom login starts #
-
-if ( !function_exists( 'digitalnomad_login_logo' ) ) {
-
-	/**
-	 * Custom login logo if set
-	 */
-	function digitalnomad_login_logo() {
-
-		$custom_logo_id = get_theme_mod( 'custom_logo' );
-		if ( !empty( $custom_logo_id ) ) {
-			?>
-			<style type="text/css">
-				#login h1 a, .login h1 a {
-					background-image: url('<?php echo esc_url( wp_get_attachment_image_url( $custom_logo_id, 'medium' ) ); ?>');
-					background-size: 84px 84px;
-					height: 84px;
-					width: 84px;
-					border-radius: 50%;
-				}
-			</style>
-			<?php
-		}
-	}
-
-}
-
-add_action( 'login_enqueue_scripts', 'digitalnomad_login_logo' );
-
-if ( !function_exists( 'digitalnomad_login_logo_url' ) ) {
-
-	/**
-	 * Links to homepage on wp-login.php
-	 *
-	 * @return type
-	 */
-	function digitalnomad_login_logo_url() {
-		return home_url();
-	}
-
-}
-
-add_filter( 'login_headerurl', 'digitalnomad_login_logo_url' );
-
-if ( !function_exists( 'digitalnomad_login_logo_title' ) ) {
-
-	/**
-	 * Improves <h1> title on wp-login.php
-	 *
-	 * @return type
-	 */
-	function digitalnomad_login_logo_title() {
-		return get_bloginfo( 'name' );
-	}
-
-}
-
-add_filter( 'login_headertext', 'digitalnomad_login_logo_title' );
-// custom login ends #
