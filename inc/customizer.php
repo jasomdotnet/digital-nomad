@@ -22,90 +22,90 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 		) );
 		// footer image
 		$wp_customize->add_setting( 'digitalnomad_footer_image', array(
-			'default'			 => '',
-			'type'				 => 'theme_mod',
+			'default'		 => '',
+			'type'		 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
+			'sanitize_callback'	 => 'absint',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_footer_image', array(
-			'label'			 => __( 'Background Image For Footer', 'digital-nomad' ),
+			'label'		 => __( 'Background Image For Footer', 'digital-nomad' ),
 			'description'	 => __( 'Image used in footer as background.', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_footer_image',
 		) ) );
 		// default feature image
 		$wp_customize->add_setting( 'digitalnomad_default_feature_image', array(
-			'default'			 => '',
-			'type'				 => 'theme_mod',
+			'default'		 => '',
+			'type'		 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
+			'sanitize_callback'	 => 'absint',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_default_feature_image', array(
-			'label'			 => __( 'Default Featured Image', 'digital-nomad' ),
+			'label'		 => __( 'Default Featured Image', 'digital-nomad' ),
 			'description'	 => __( 'Image used in post preview when no feature image is set in the post.', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_default_feature_image',
 		) ) );
 		// post archive page
 		$wp_customize->add_setting( 'digitalnomad_archive_page', array(
-			'default'			 => url_to_postid( 'archive' ),
-			'type'				 => 'theme_mod',
+			'default'		 => url_to_postid( 'archive' ),
+			'type'		 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
 			'sanitize_callback'	 => 'digitalnomad_sanitize_archive_page',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Control( $wp_customize, 'digitalnomad_archive_page', array(
-			'label'			 => __( 'Archive Page', 'digital-nomad' ),
+			'label'		 => __( 'Archive Page', 'digital-nomad' ),
 			/* translators: %s: admin url pointing to archive for post type page */
 			'description'	 => sprintf( __( 'Select a <a href="%s">static page</a> which will serve as archive for posts.', 'digital-nomad' ), esc_url( admin_url( 'edit.php?post_type=page' ) ) ),
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_archive_page',
 			'priority'		 => 10,
-			'type'			 => 'select',
+			'type'		 => 'select',
 			'choices'		 => $values_for_select,
 		) ) );
 		// enable infinity scroll for blog archive, category and tags.
 		$wp_customize->add_setting( 'digitalnomad_infinite_scroll', array(
 			'capability'		 => 'edit_theme_options',
-			'type'				 => 'theme_mod',
-			'default'			 => true,
+			'type'		 => 'theme_mod',
+			'default'		 => true,
 			'sanitize_callback'	 => 'digitalnomad_sanitize_checkbox',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Control( $wp_customize, 'digitalnomad_infinite_scroll', array(
-			'label'			 => __( 'Infinite Scroll', 'digital-nomad' ),
+			'label'		 => __( 'Infinite Scroll', 'digital-nomad' ),
 			'description'	 => __( 'Enable infinite scroll for blog archive, categories and tags.', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
-			'type'			 => 'checkbox',
+			'type'		 => 'checkbox',
 			'settings'		 => 'digitalnomad_infinite_scroll',
 		) ) );
 		// digitalnomad_blazy
 		$wp_customize->add_setting( 'digitalnomad_blazy_lazyload', array(
 			'capability'		 => 'edit_theme_options',
-			'type'				 => 'theme_mod',
-			'default'			 => true,
+			'type'		 => 'theme_mod',
+			'default'		 => true,
 			'sanitize_callback'	 => 'digitalnomad_sanitize_checkbox',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Control( $wp_customize, 'digitalnomad_blazy_lazyload', array(
-			'label'			 => __( 'Lazyload', 'digital-nomad' ),
+			'label'		 => __( 'Lazyload', 'digital-nomad' ),
 			'description'	 => __( 'Enable lazyload using bLazy (vanilla JS library).', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
-			'type'			 => 'checkbox',
+			'type'		 => 'checkbox',
 			'settings'		 => 'digitalnomad_blazy_lazyload',
 		) ) );
 		// digitalnomad_previous_bg
 		$wp_customize->add_setting( 'digitalnomad_previous_bg', array(
-			'default'			 => '',
-			'type'				 => 'theme_mod',
+			'default'		 => '',
+			'type'		 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
+			'sanitize_callback'	 => 'absint',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_previous_bg', array(
-			'label'			 => __( 'Background Image For Previous Pager', 'digital-nomad' ),
+			'label'		 => __( 'Background Image For Previous Pager', 'digital-nomad' ),
 			'description'	 => __( 'Image used as bacground in "previous" post(s) navigation.', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_previous_bg',
@@ -113,14 +113,14 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 		) ) );
 		// digitalnomad_next_bg
 		$wp_customize->add_setting( 'digitalnomad_next_bg', array(
-			'default'			 => '',
-			'type'				 => 'theme_mod',
+			'default'		 => '',
+			'type'		 => 'theme_mod',
 			'capability'		 => 'edit_theme_options',
-			'sanitize_callback'	 => 'digitalnomad_sanitize_image',
+			'sanitize_callback'	 => 'absint',
 		) );
 		$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'digitalnomad_next_bg', array(
-			'label'			 => __( 'Background Image For Next Pager', 'digital-nomad' ),
+			'label'		 => __( 'Background Image For Next Pager', 'digital-nomad' ),
 			'description'	 => __( 'Image used as bacground in "next" post(s) navigation.', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_next_bg',
@@ -164,30 +164,3 @@ if ( !function_exists( 'digitalnomad_sanitize_archive_page' ) ) {
 	}
 
 }
-
-if ( !function_exists( 'digitalnomad_sanitize_image' ) ) {
-
-	/**
-	 * Sanitize uploaded image
-	 * https://divpusher.com/blog/wordpress-customizer-sanitization-examples/#file
-	 * @param type $value
-	 * @return type
-	 */
-	function digitalnomad_sanitize_image( $file, $setting ) {
-            
-		//allowed file types
-		$mimes = array(
-                    		'jpg|jpeg|jpe' => 'image/jpeg',
-			'gif'          => 'image/gif',
-			'png'          => 'image/png'
-		);
-
-		//check file type from file name
-		$file_ext = wp_check_filetype( $file, $mimes );
-
-		//if file has a valid mime type return it, otherwise return default
-		 return ( $file_ext['ext'] ? $file : $setting->default );                 
-	}
-
-}
-

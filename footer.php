@@ -5,7 +5,7 @@
 		<?php do_action( 'digitalnomad_for_footer' ); ?>
     </div>
 
-</footer><!-- #paticka -->
+</footer><!-- #footer -->
 
 <div id="back-top"><a href="#top-row"></a></div>
 

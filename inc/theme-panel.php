@@ -6,7 +6,7 @@ if (!function_exists( 'digitalnomad_add_theme_page' )) {
      * Adds custom page for digitalnomad
      */
     function digitalnomad_add_theme_page() {
-        add_theme_page( __( 'Digital Nomad', 'digital-nomad' ) . ' ' . wp_get_theme()->get( 'Version' ), 'Digital Nomad', 'edit_theme_options', 'digitalnomad-panel', 'digitalnomad_panel_content' );
+        add_theme_page( __( 'Digital Nomad', 'digital-nomad' ) . ' ' . wp_get_theme( get_template() )->get( 'Version' ), 'Digital Nomad', 'edit_theme_options', 'digitalnomad-panel', 'digitalnomad_panel_content' );
 
     }
 
@@ -19,7 +19,7 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
 
         ?>
         <div class="wrap about-wrap full-width-layout">
-            <h1><?php esc_html_e( 'Welcome to Digital Nomad', 'digital-nomad' ); ?> <?php echo esc_html( wp_get_theme()->get( 'Version' ) ); ?></h1>
+            <h1><?php esc_html_e( 'Welcome to Digital Nomad', 'digital-nomad' ); ?> <?php echo esc_html( wp_get_theme( get_template() )->get( 'Version' ) ); ?></h1>
             <p class="about-text">
                 <?php esc_html_e( 'Congrats on choosing Digital Nomad, theme for digital nomads like you.', 'digital-nomad' ); ?>
                 <br>
@@ -36,7 +36,7 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                     ?></li>
                 <li><?php
                     /* translators: %s: admin url pointing to widget settings */
-                    printf( wp_kses_post( 'Under <a href="%s">Widgets</a> add menu/about text for Header sidebar. Use "Custom HTML" widget.', 'digital-nomad' ), esc_url( admin_url( 'widgets.php' ) ) );
+                    printf( wp_kses_post( 'Under <a href="%s">Widgets</a> add what I call "menu/about text" for Header sidebar. Use "Custom HTML" widget.', 'digital-nomad' ), esc_url( admin_url( 'widgets.php' ) ) );
 
                     ?></li>
                 <li><?php
@@ -51,7 +51,7 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                         <li><?php esc_html_e( 'Under "Digital Nomad Options":', 'digital-nomad' ); ?>
                             <ol>
                                 <li><?php esc_html_e( 'Set "Background Image For Footer"', 'digital-nomad' ); ?></li>
-                                <li><?php esc_html_e( 'Set "Default Featured Image", image used in post archives when no feature image is selected.', 'digital-nomad' ); ?></li>
+                                <li><?php esc_html_e( 'Set "Default Featured Image", image used in post archives as post preview when no feature image is selected.', 'digital-nomad' ); ?></li>
                                 <li><?php esc_html_e( 'Select static "Archive Page" which will be used as an archive for all posts. Date archives are disabled by default and will return 404 if no archive page is selected.', 'digital-nomad' ); ?></li>
                                 <li><?php esc_html_e( 'Enable "Infinite Scroll" for latest posts, categories and tags. Custom post types and custom taxonomies are also supported.', 'digital-nomad' ); ?></li>
                                 <li><?php esc_html_e( 'Enable "Lazyload" for latest posts, categories and tags. NOTE: Images in posts are not nativelly lazyloaded', 'digital-nomad' ); ?></li>
@@ -67,7 +67,7 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
             <div class="has-2-columns is-fullwidth">
                 <div class="column">
                     <h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/resmushit-image-optimizer/' ); ?>"><?php esc_html_e( 'reSmush.it Image Optimizer', 'digital-nomad' ); ?></a></h4>
-                    <p><?php esc_html_e( 'Digital Nomad theme relies heavy on images. reSmush.it is free service providing image size reduction based on several advanced algorithms. The API accept JPG, PNG and GIF files up to 5MB. Set reSmush,it quality to 82.', 'digital-nomad' ); ?></p>
+                    <p><?php esc_html_e( 'Digital Nomad theme relies heavy on images. reSmush.it is free service providing image size reduction based on several advanced algorithms. The API accept JPG, PNG and GIF files up to 5MB. Set reSmush.it quality to 82.', 'digital-nomad' ); ?></p>
                 </div>
                 <div class="column">
                     <h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/wordpress-seo/' ); ?>"><?php esc_html_e( 'Yoast SEO', 'digital-nomad' ); ?></a></h4>
@@ -81,14 +81,14 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                 </div>
                 <div class="column">
                     <h4><a href="<?php echo esc_url( 'https://wordpress.org/plugins/wp-super-cache/' ); ?>"><?php esc_html_e( 'WP Super Cache', 'digital-nomad' ); ?></a></h4>
-                    <p><?php esc_html_e( 'Don not leave your site without enabled cache. WP Super Cache from Automattic does the job well.', 'digital-nomad' ); ?></p>
+                    <p><?php esc_html_e( 'Do not leave your site without enabled cache. WP Super Cache from Automattic does a great job.', 'digital-nomad' ); ?></p>
                 </div>
             </div>
             <hr>
             <h3><?php esc_html_e( 'Post-installation Actions', 'digital-nomad' ); ?></h3>
             <div class="has-2-columns is-fullwidth">
-                <div class="column">
-                    <h4><?php esc_html_e( 'Leave a review', 'digital-nomad' ); ?></h4>
+                <div class="column"> 
+                    <h4><a href="<?php echo esc_url( 'https://wordpress.org/themes/digital-nomad/' ); ?>"><?php esc_html_e( 'Leave a review', 'digital-nomad' ); ?></a></h4>
                     <p><?php esc_html_e( 'If you like Digital Nomad, review the theme on WordPress.org. Leave a review even if you don\'t like it.', 'digital-nomad' ); ?></p>
                 </div>
                 <div class="column">
@@ -107,7 +107,7 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
             <ul>
                 <li><?php esc_html_e( 'Theme doesn\'t require jQuery so (after additional optimalization) you can easily reach out high score in Google\'s PageSpeed Insights.', 'digital-nomad' ); ?></li>
                 <li><?php esc_html_e( 'Theme doesn\'t support post-formats. I have personally never used this WordPress feature and that\'s why I didn\'t add support.', 'digital-nomad' ); ?></li>
-                <li><?php esc_html_e( 'Theme doesn\'t use navigation menus. Instead, it uses short about-me text in the header which can be hotlinked to various sections of the blog.', 'digital-nomad' ); ?></li>
+                <li><?php esc_html_e( 'Theme doesn\'t use navigation menus. Instead, it uses short "menu/about text" in the header which can be hotlinked to various sections of the site.', 'digital-nomad' ); ?></li>
                 <li><?php esc_html_e( 'Within the concept of the design, "Site Title" and "Tagline" are printed in the code in the form of logo\'s (gravatar\'s) "ALT" and "TITLE" tag (bots can still scrap the information) instead of to be displayed as <H1> text somewhere in the header.', 'digital-nomad' ); ?></li>
             </ul>
             <h4><?php esc_html_e( '@TODO', 'digital-nomad' ); ?></h4>
@@ -154,7 +154,7 @@ if (!function_exists( 'digitalnomad_admin_notice__success' )) {
         <div class="notice notice-success is-dismissible">
             <p><?php
                 /* translators: %s: admin url pointing to configuration instructions for Digital Nomad theme */
-                printf( esc_html__( 'Digital Nomad theme activated. <a href="%s">Visit configuration instructions here</a>.', 'digital-nomad' ), esc_url( admin_url( 'themes.php?page=digitalnomad-panel' ) ) );
+                printf( wp_kses_post( 'Digital Nomad theme activated. <a href="%s">Visit configuration instructions here</a>.', 'digital-nomad' ), esc_url( admin_url( 'themes.php?page=digitalnomad-panel' ) ) );
 
                 ?></p>
         </div>

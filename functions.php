@@ -23,7 +23,7 @@ if ( !function_exists( 'digitalnomad_add_styles' ) ) {
 	 * Styles
 	 */
 	function digitalnomad_add_styles() {
-		wp_enqueue_style( 'digital-nomad', get_stylesheet_uri(), array(), filemtime( dirname( __FILE__ ) . '/style.css' ) );
+		wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style.css', array(), filemtime( dirname( __FILE__ ) . '/style.css' ) );
 		wp_add_inline_style( 'digital-nomad', digitalnomad_header_image_background() );
 	}
 
@@ -653,7 +653,7 @@ if ( !function_exists( 'digitalnomad_the_archive_table' ) ) {
 	 */
 	function digitalnomad_the_archive_table( $data, $category = true, $before = null, $after = null ) {
 
-		echo esc_html( $before ? $before . PHP_EOL : PHP_EOL );
+		echo wp_kses_post( $before ? $before . PHP_EOL : PHP_EOL );
 		echo '<div class="archive_table">' . PHP_EOL;
 
 		foreach ( $data as $year => $posts ) {
@@ -689,7 +689,7 @@ if ( !function_exists( 'digitalnomad_the_archive_table' ) ) {
 			}
 		}
 		echo '</div><!-- /archive_table -->' . PHP_EOL;
-		echo esc_html( $after ? $after . PHP_EOL : PHP_EOL );
+		echo wp_kses_post( $after ? $after . PHP_EOL : PHP_EOL );
 	}
 
 }
