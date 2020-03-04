@@ -36,9 +36,17 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                     ?></li>
                 <li><?php
                     /* translators: %s: admin url pointing to widget settings */
-                    printf( wp_kses_post( 'Under <a href="%s">Widgets</a> add what I call "menu/about text" for Header sidebar. Use "Custom HTML" widget.', 'digital-nomad' ), esc_url( admin_url( 'widgets.php' ) ) );
-
-                    ?></li>
+                    printf( wp_kses_post( 'Under <a href="%s">Widgets</a> add what I call "menu/about text" for Header sidebar. Use "Custom HTML" widget with following sample code:', 'digital-nomad' ), esc_url( admin_url( 'widgets.php' ) ) );
+                    ?>
+                    <blockquote>
+                        <em>
+                        <?php
+                             /* translators: %s: home_url pointing to front page and archive page */
+                            printf( __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis posuere massa, ac porta risus. Sed elit turpis, imperdiet &lt;a href="%1$s"&gt;home&lt;/a&gt; lectus vel, eleifend tempor diam. &lt;a href="%2$s"&gt;Archive&lt;/a&gt; finibus aliquam est, sed tincidunt ipsum congue et. Integer a gravida enim, vitae tempor leo.', 'digital-nomad' ), home_url(), home_url() . '/archive/' );
+                        ?>
+                        </em>
+                    </blockquote>
+                </li>
                 <li><?php
                     /* translators: %s: admin url pointing to theme customizer */
                     printf( wp_kses_post( 'In <a href="%s">Customizer</a> set:', 'digital-nomad' ), esc_url( admin_url( 'customize.php?return=%2Fwp-admin%2Fthemes.php' ) ) );

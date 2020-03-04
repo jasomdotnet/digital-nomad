@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.0.7
+Version: 1.0.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -102,5 +102,9 @@ Source: https://pxhere.com/en/photo/1562371
 * Fixed customizer sanitization
 * Small bugs fixed
 * Released: March 3, 2020
+
+= 1.0.8 =
+* Added sample about/menu code into a post-installation instructions due to problem with starter-content
+* Released: March 4, 2020
 
 Initial release
