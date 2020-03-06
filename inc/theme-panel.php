@@ -27,7 +27,11 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                 <a href="https://www.jasom.net/digital-nomad-wordpress-theme/?utm_source=digitalnomadtheme&utm_medium=jasomdotnet&utm_campaign=themepanel" class="button button-primary button-large"><?php esc_html_e( 'Theme Homepage', 'digital-nomad' ); ?></a>
             </p>
             <h3><?php esc_html_e( 'Configuration', 'digital-nomad' ); ?></h3>
-            <p><?php esc_html_e( 'Follow these steps to set up theme correctly:', 'digital-nomad' ); ?></p>
+            <p><?php
+                    /* translators: %s: url pointing to configuration videoturorial */
+                    printf( wp_kses_post( 'Watch <a href="%s">this tutorial on YouTube</a> or follow these steps to set up theme correctly:', 'digital-nomad' ), esc_url( 'https://www.youtube.com/watch?v=M-YgCZrRtzQ' ) );
+
+                    ?></p>
             <ol>
                 <li><?php
                     /* translators: %s: url pointing to official documentation about child themes */
@@ -70,6 +74,7 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                 </li>
                 <li><?php esc_html_e( 'That\'s it!', 'digital-nomad' ); ?></li>
             </ol>
+            <p><?php esc_html_e( 'NOTE: Everytime you install new theme disable cache plugins since they add new layer of complexity. Turn cache plugins back on after everything is configured correctly.', 'digital-nomad' ); ?></p>
             <hr>
             <h3><?php esc_html_e( 'Recommended Plugins', 'digital-nomad' ); ?></h3>
             <div class="has-2-columns is-fullwidth">
@@ -111,11 +116,12 @@ if (!function_exists( 'digitalnomad_panel_content' )) {
                 </div>
             </div>
             <hr>
-            <h4><?php esc_html_e( 'What theme does not', 'digital-nomad' ); ?></h4>
+            <h4><?php esc_html_e( 'What theme does and does not', 'digital-nomad' ); ?></h4>
             <ul>
                 <li><?php esc_html_e( 'Theme doesn\'t require jQuery so (after additional optimalization) you can easily reach out high score in Google\'s PageSpeed Insights.', 'digital-nomad' ); ?></li>
                 <li><?php esc_html_e( 'Theme doesn\'t support post-formats. I have personally never used this WordPress feature and that\'s why I didn\'t add support.', 'digital-nomad' ); ?></li>
-                <li><?php esc_html_e( 'Theme doesn\'t use navigation menus. Instead, it uses short "menu/about text" in the header which can be hotlinked to various sections of the site.', 'digital-nomad' ); ?></li>
+                <li><?php esc_html_e( 'Theme doesn\'t use navigation menus. Instead, it uses short "menu/about text" in the header which can be hotlinked to various sections within or outside of the site.', 'digital-nomad' ); ?></li>
+                <li><?php esc_html_e( 'Theme lacks built-in feature for GoogleFonts. Our motivation for working on open-source projects is mostly internal satisfaction, right? GoogleFonts harms my internal satisfaction. They mean additional requests, additional bandwidth, another privacy leak. I don\'t like them, I don\'t want them. But I understand that some of you like them, some of you want them. We can make a deal: Create a snipped code which can be inserted into child\'s function.php and I will write documentation. If you read this sentence, so far nobody did so :-)', 'digital-nomad' ); ?></li>
                 <li><?php esc_html_e( 'Within the concept of the design, "Site Title" and "Tagline" are printed in the code in the form of logo\'s (gravatar\'s) "ALT" and "TITLE" tag (bots can still scrap the information) instead of to be displayed as <H1> text somewhere in the header.', 'digital-nomad' ); ?></li>
             </ul>
             <h4><?php esc_html_e( '@TODO', 'digital-nomad' ); ?></h4>

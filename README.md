@@ -51,7 +51,7 @@ Source: https://pxhere.com/en/photo/675708
 
 ## Credits
 
-Theme was inpired by Pieter's https://nomadlist.com/
+Theme was inpired by Pieter's https://nomadlist.com
 
 ## Wise idea for the end
 

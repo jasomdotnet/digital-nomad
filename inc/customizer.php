@@ -91,7 +91,7 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 		$wp_customize->add_control(
 		new WP_Customize_Control( $wp_customize, 'digitalnomad_blazy_lazyload', array(
 			'label'		 => __( 'Lazyload', 'digital-nomad' ),
-			'description'	 => __( 'Enable lazyload using bLazy (vanilla JS library).', 'digital-nomad' ),
+			'description'	 => __( 'Enable lazyload using bLazy (vanilla JS library). Leave this option enabled otherwise you will break the Internet. You do not want break the Internet, right?', 'digital-nomad' ),
 			'section'		 => 'digitalnomad_options',
 			'type'		 => 'checkbox',
 			'settings'		 => 'digitalnomad_blazy_lazyload',
@@ -125,6 +125,21 @@ if ( !function_exists( 'digitalnomad_customizer_register' ) ) {
 			'section'		 => 'digitalnomad_options',
 			'settings'		 => 'digitalnomad_next_bg',
 			'priority'		 => 12,
+		) ) );
+		// digitalnomad_short_about
+		$wp_customize->add_setting( 'digitalnomad_short_about', array(
+			'capability'		 => 'edit_theme_options',
+			'type'		 => 'theme_mod',
+			'default'		 => false,
+			'sanitize_callback'	 => 'digitalnomad_sanitize_checkbox',
+		) );
+		$wp_customize->add_control(
+		new WP_Customize_Control( $wp_customize, 'digitalnomad_short_about', array(
+			'label'		 => __( 'Bio in header has 3 lines', 'digital-nomad' ),
+			'description'	 => __( 'Enable this if your "about/menu" text in the header has only 3 lines. This option will fit logo/gravatar size with the bio length.', 'digital-nomad' ),
+			'section'		 => 'digitalnomad_options',
+			'type'		 => 'checkbox',
+			'settings'		 => 'digitalnomad_short_about',
 		) ) );
 	}
 

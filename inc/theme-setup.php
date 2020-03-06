@@ -10,8 +10,8 @@ if ( !function_exists( 'digitalnomad_widgets_init' ) ) {
 			'id'			 => 'header-text',
 			'name'			 => __( 'Header text', 'digital-nomad' ),
 			'description'	 => __( 'Menu/about text for Header sidebar. Use "Custom HTML" widget.', 'digital-nomad' ),
-			'before_widget'	 => '<div class="widget header_text text_shadow %2$s" id="%1$s">',
-			'after_widget'	 => '</div>',
+			'before_widget'	 => '',
+			'after_widget'	 => '',
 			'before_title'	 => '<!--',
 			'after_title'	 => '-->',
 		) );

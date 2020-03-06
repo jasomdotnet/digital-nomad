@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.0.8
+Version: 1.0.9
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,5 +106,11 @@ Source: https://pxhere.com/en/photo/1562371
 = 1.0.8 =
 * Added sample about/menu code into a post-installation instructions due to problem with starter-content
 * Released: March 4, 2020
+
+= 1.0.9 =
+* Fixed bug when bLazy lazyload disabled
+* Added option to scale logo when about/menu text has only 3 lines
+* Linked YT video tutorial from post-install configurations
+* Released: March 6, 2020
 
 Initial release

@@ -234,7 +234,7 @@ if ( !function_exists( 'digitalnomad_post_preview_layout' ) ) {
 			$feature_image_src = null; // because digitalnomad_default_feature_image may not be set
 		}
 
-		$style = !empty( $feature_image_src ) ? 'background-image: url("' . esc_url( $feature_image_src ) . '");' : '';
+		$style = !empty( $feature_image_src ) ? 'background-image: url(\'' . esc_url( $feature_image_src ) . '\');' : '';
 
 		$layout = '';
 
@@ -550,6 +550,10 @@ if ( !function_exists( 'digitalnomad_add_post_archive_to_page' ) ) {
 	 * @return string
 	 */
 	function digitalnomad_add_class_for_archive_page( $classes ) {
+            
+		if ( get_theme_mod( 'digitalnomad_short_about' ) == true ) {
+			$classes[] = 'short_about';
+		}
 
 		if ( is_front_page() && get_option( 'show_on_front' ) == 'posts' ) {
 			$classes[] = 'intended_front_page';

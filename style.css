@@ -4,7 +4,7 @@ Theme URI: https://www.jasom.net/digital-nomad-wordpress-theme/
 Author: Jasom Dotnet
 Author URI: https://www.jasom.net
 Description: Mobile-first one-column theme for digital nomads like you. It's not in theme, it's in content! But good theme also helps...
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, custom-background, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -53,6 +53,7 @@ blockquote {
     margin: 0;
     padding: 1em 1.5em;
     font-style: italic;
+    margin-bottom: 1em;
 }
 blockquote p:first-child {
     margin-top: 0;
@@ -98,6 +99,7 @@ body:not(.intended_front_page) #jump_down  {
     height: 10em;
     margin: 0 auto;
     display: block;
+    margin-bottom: 1.5em;
 }
 .logo {
     display: block;
@@ -111,14 +113,14 @@ body:not(.intended_front_page) #jump_down  {
     line-height: 1.75;
     font-weight: 300;
     text-align: justify;
-    margin-top: 1.5em;
+    display: inherit;
 }
 .header_text a {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
 }
-noscript#general {
+#general {
     width: 100%;
     display: block;
     margin-top: 1.5em;
@@ -696,11 +698,11 @@ table th {
         margin-right: 1.5em;
         width: 7em;
         height: 7em;
+        margin-bottom: 0;
     }
-    .logo {
-    }
-    .header_text {
-        margin-top: 0;
+    .short_about .logo_link {
+        width: 5.25em;
+        height: 5.25em;
     }
     .archive_desc {
         margin-top: 1.5em;
