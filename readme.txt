@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.0.9
+Version: 1.1.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -113,4 +113,8 @@ Source: https://pxhere.com/en/photo/1562371
 * Linked YT video tutorial from post-install configurations
 * Released: March 6, 2020
 
-Initial release
+= 1.1.0 =
+* Configurable position of categories and tags
+* Configurable layout width
+* Added new widget in header for newsletters
+* Released: March 15, 2020

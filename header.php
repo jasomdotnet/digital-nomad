@@ -16,12 +16,17 @@
 				<div id="headelements">
 					<div id="cell">
 						<div class="inner_content">
-							<div class="stabilize">
-								<div class="header_text text_shadow">
+							<div class="stabilize header_text text_shadow">
+								<div class="main_header_block">
 									<?php get_template_part( 'templates/header', 'logo' ); ?>
 									<?php get_template_part( 'templates/header', 'text' ); ?>
 								</div>
 								<noscript id="general"><?php esc_html_e( 'Some features may not work without JavaScript', 'digital-nomad' ); ?></noscript>
+								<?php
+									if ( is_active_sidebar( 'newsletter' ) ) {
+										dynamic_sidebar( 'newsletter' );
+									}
+								?>
 							</div>
 							<?php if ( is_front_page() ): ?>
 								<div id="jump_down">

@@ -17,7 +17,7 @@
 		<header>
 			<div class="post_time main_time time_permalink"><a href="<?php the_permalink(); ?>" title="<?php /* translators: %s: title of the post for the permalink */ printf( esc_attr( __( 'Permalink for: %s', 'digital-nomad' ) ), esc_attr( get_the_title() ) ); ?>"><?php digitalnomad_the_date(); ?></a></div>				
 			<h1 class="post_title main_title"><?php the_title(); ?></h1>
-			<div class="post_category"><?php the_category( ', ' ); ?> <?php the_tags( '(<span class="post_tags">', ', ', '</span>)' ); ?></div>
+			<?php digitalnomad_the_category_header(); ?>
 		</header>
 
 		<?php if ( get_the_content( '' ) ): ?>
@@ -31,6 +31,8 @@
 
 			</div>
 		<?php endif; ?>
+            
+		<?php digitalnomad_the_category_footer(); ?>
 
 		<?php do_action( 'digitalnomad_inner_content_ends' ); ?>
 
