@@ -9,7 +9,7 @@ if (!function_exists( 'digitalnomad_widgets_init' )) {
         register_sidebar( array(
             'id' => 'header-text',
             'name' => __( 'Header text', 'digital-nomad' ),
-            'description' => __( 'Menu/about text for Header sidebar. Use "Custom HTML" widget.', 'digital-nomad' ),
+            'description' => __( 'Menu/about text for Header sidebar. Recommended widget type is "Custom HTML" widget. NOTE: If you use "Main menu", this sidebar is hidden (use "Newsletter" sidebar instead).', 'digital-nomad' ),
             'before_widget' => '',
             'after_widget' => '',
             'before_title' => '<!--',
@@ -40,6 +40,8 @@ if (!function_exists( 'digitalnomad_theme_features' )) {
 
         // Add theme support for Automatic Feed Links
         add_theme_support( 'automatic-feed-links' );
+        // Add thene support for Menus
+        add_theme_support( 'menus' );
         // Add theme support for Featured Images
         add_theme_support( 'post-thumbnails' );
         // https://developer.wordpress.org/themes/functionality/custom-logo/
@@ -132,7 +134,10 @@ if (!function_exists( 'digitalnomad_theme_features' )) {
                 'digitalnomad_next_bg' => '{{image-bg-next}}',
             ),
         ) );
-
+        // menu registration
+        register_nav_menus( array(
+                'main' => __( 'Main menu', 'digital-nomad' )
+        ) );
     }
 
 }

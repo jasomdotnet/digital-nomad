@@ -23,7 +23,7 @@ if (!function_exists( 'digitalnomad_add_styles' )) {
      * Styles
      */
     function digitalnomad_add_styles() {
-        wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style.css', array(), filemtime( dirname( __FILE__ ) . '/style.css' ) );
+        wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style.css', array(), filemtime( dirname( __FILE__ ) . '/style.css' )  );
         wp_add_inline_style( 'digital-nomad', digitalnomad_header_image_background() );
 
     }
@@ -573,18 +573,22 @@ if (!function_exists( 'digitalnomad_add_post_state' )) {
 
 add_filter( 'display_post_states', 'digitalnomad_add_post_state', 10, 2 );
 
-if (!function_exists( 'digitalnomad_add_post_archive_to_page' )) {
+if (!function_exists( 'digitalnomad_add_class_for_body_tag' )) {
 
     /**
-     * Add some class for archive page
+     * Adds additional classes to body tag
      *
      * @param string  $classes
      * @return string
      */
-    function digitalnomad_add_class_for_archive_page( $classes ) {
+    function digitalnomad_add_class_for_body_tag( $classes ) {
 
         if (get_theme_mod( 'digitalnomad_short_about' ) == true) {
             $classes[] = 'short_about';
+        }
+
+        if ( has_nav_menu( 'main' ) ) {
+            $classes[] = 'main_menu_on';
         }
 
         if (is_front_page() && get_option( 'show_on_front' ) == 'posts') {
@@ -602,7 +606,7 @@ if (!function_exists( 'digitalnomad_add_post_archive_to_page' )) {
     }
 
 }
-add_filter( 'body_class', 'digitalnomad_add_class_for_archive_page' );
+add_filter( 'body_class', 'digitalnomad_add_class_for_body_tag' );
 
 if (!function_exists( 'digitalnomad_remove_date_archives' )) {
 

@@ -4,10 +4,10 @@ Theme URI: https://www.jasom.net/digital-nomad-wordpress-theme/
 Author: Jasom Dotnet
 Author URI: https://www.jasom.net
 Description: Mobile-first one-column theme for digital nomads like you. It's not in theme, it's in content! But good theme also helps...
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, one-column, custom-background, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
+Tags: blog, photography, one-column, custom-background, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, custom-menu
 Text Domain: digital-nomad
 */
 
@@ -119,8 +119,18 @@ body:not(.intended_front_page) #jump_down  {
     font-weight: bold;
     text-decoration: none;
 }
+.main_menu_on .header_text {
+    text-align: center;
+}
 .main_header_block {
     display: inherit;
+}
+.dn_menu ul li {
+    list-style-type: none;
+}
+.dn_menu ul {
+    margin: 0;
+    padding: 0;
 }
 #general {
     width: 100%;
@@ -705,6 +715,16 @@ table th {
         width: 7em;
         height: 7em;
         margin-bottom: 0;
+    }
+    .main_menu_on .logo_link {
+        float: none;
+        margin: 0 auto 1.5em auto;
+    }
+    .dn_menu ul li {
+        display: inline-block;
+    }
+    .dn_menu ul li a {
+        padding: 0 0.5em;
     }
     .short_about .logo_link {
         width: 5.25em;

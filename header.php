@@ -20,21 +20,21 @@
 								<div class="main_header_block">
 									<?php get_template_part( 'templates/header', 'logo' ); ?>
 									<?php get_template_part( 'templates/header', 'text' ); ?>
-								</div>
+								</div><!-- .main_header_block -->
 								<noscript id="general"><?php esc_html_e( 'Some features may not work without JavaScript', 'digital-nomad' ); ?></noscript>
 								<?php
 									if ( is_active_sidebar( 'newsletter' ) ) {
 										dynamic_sidebar( 'newsletter' );
 									}
 								?>
-							</div>
+							</div><!-- .stabilize -->
 							<?php if ( is_front_page() ): ?>
 								<div id="jump_down">
 									<a href="#content"><?php esc_html_e( 'Jump Down', 'digital-nomad' ); ?></a>
 								</div>
 							<?php endif; ?>
-						</div>
-					</div>
+						</div><!-- .inner_content -->
+					</div><!-- #cell -->
 					<?php
 					if ( is_archive() || is_search() || is_page() || is_404() ):
 						get_template_part( 'templates/archive', 'title' );

@@ -55,4 +55,4 @@ Theme was inpired by Pieter's https://nomadlist.com
 
 ## Wise idea for the end
 
-It's not in theme, it's in content. But good theme also helps...
+It's not in theme, it's in content. But good theme also helps.
