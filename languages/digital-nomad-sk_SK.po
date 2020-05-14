@@ -1,0 +1,553 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Digital Nomad\n"
+"POT-Creation-Date: 2020-05-06 20:05+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jasom Dotnet\n"
+"Language-Team: Jasom.net\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_html__;esc_html_e;esc_html_x;"
+"esc_attr__;esc_attr_e;esc_attr_x;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:12
+msgid "This is famous Error 404!"
+msgstr "Toto je slávna chyba 404!"
+
+#: ../404.php:18
+msgid "Goob job, you found a page that doesn't exist."
+msgstr "Hmm... podarilo sa Vám nájsť stránku, ktorá neexistuje."
+
+#: ../404.php:21
+msgid "Try to use search form below or read my latest post:"
+msgstr ""
+"Čo robiť? Skúste použiť vyhľadávanie alebo si prečítajte najnovší príspevok "
+"na blogu:"
+
+#: ../comments.php:17
+msgid "&laquo; Previous Comments"
+msgstr "&laquo; Predchádzajúce komentáre"
+
+#: ../comments.php:18
+msgid "Next Comments &raquo;"
+msgstr "Nasledujúce komentáre &raquo;"
+
+#: ../functions.php:163
+msgid "Rescroll to load next posts."
+msgstr "Preskrolujte za účelom načítania ďalších príspevkov."
+
+#: ../functions.php:164
+msgid "That's all"
+msgstr "To je všetko"
+
+#: ../functions.php:166
+msgid "Something unexpected happened with AJAX request :-/"
+msgstr "Olala, s AJAXom sa stalo niečo neočakávané :-/"
+
+#: ../functions.php:201
+msgid "updated:"
+msgstr "aktualizované:"
+
+#: ../functions.php:221
+#, php-format
+msgid "%s ago"
+msgstr "%s dozadu"
+
+#: ../functions.php:290
+msgid "More pages: "
+msgstr "Viac stránok:"
+
+#: ../functions.php:418
+msgid "Previous post:"
+msgstr "Predchádzajúci:"
+
+#: ../functions.php:426
+msgid "Next post:"
+msgstr "Nasledujúci:"
+
+#: ../functions.php:446
+msgid "&laquo; Previous Page"
+msgstr "&laquo; Predchádzajúca stránka"
+
+#: ../functions.php:447
+msgid "Next Page &raquo;"
+msgstr "Ďalšia stránka &raquo;"
+
+#: ../functions.php:523
+msgid "&uarr; Up"
+msgstr "&uarr; Hore"
+
+#: ../functions.php:544
+#, php-format
+msgid "Powered by %s."
+msgstr "Poháňa %s."
+
+#: ../functions.php:549
+#, php-format
+msgid "Themed by %s."
+msgstr "Vzhľad spracoval %s."
+
+#: ../functions.php:610
+msgid "Post Archive Page"
+msgstr "Stránka s archívom príspevkov"
+
+#: ../functions.php:712
+msgid "There are no posts."
+msgstr "Zatiaľ bez príspevkov."
+
+#: ../functions.php:787
+msgid "(no title)"
+msgstr "(bez nadpisu)"
+
+#: ../functions.php:935
+msgid "Your comment is awaiting moderation."
+msgstr "Váš komentár čaká na schválenie."
+
+#: ../functions.php:937
+msgid ""
+"Your comment is awaiting moderation. This is a preview, your comment will be "
+"visible after it has been approved."
+msgstr ""
+"Váš komentár čaká na schválenie. Toto je náhľad ako sa bude zobrazovať keď "
+"bude schválený."
+
+#: ../functions.php:957
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s — %2$s"
+
+#: ../functions.php:989
+msgid "Edit"
+msgstr "Upraviť"
+
+#: ../header.php:12 ../header.php:33
+msgid "Skip to content"
+msgstr "Skočiť priamo na obsah"
+
+#: ../header.php:24
+msgid "Some features may not work without JavaScript"
+msgstr "Niektoré fičúry nebudú s vypnutým JavaScriptom pracovať ako majú."
+
+#: ../inc/customizer.php:22
+msgid "Digital Nomad Settings"
+msgstr ""
+
+#: ../inc/customizer.php:35
+msgid "Background Image For Footer"
+msgstr ""
+
+#: ../inc/customizer.php:36
+msgid "Image used in footer as background."
+msgstr ""
+
+#: ../inc/customizer.php:50
+msgid "Default Featured Image"
+msgstr ""
+
+#: ../inc/customizer.php:51
+msgid "Image used in post preview when no feature image is set in the post."
+msgstr ""
+
+#: ../inc/customizer.php:65
+msgid "Archive Page"
+msgstr ""
+
+#: ../inc/customizer.php:67
+#, php-format
+msgid ""
+"Select a <a href=\"%s\">static page</a> which will serve as archive for "
+"posts."
+msgstr ""
+
+#: ../inc/customizer.php:84
+msgid "Infinite Scroll"
+msgstr ""
+
+#: ../inc/customizer.php:85
+msgid "Enable infinite scroll for blog archive, categories and tags."
+msgstr ""
+
+#: ../inc/customizer.php:100
+msgid "Lazyload"
+msgstr ""
+
+#: ../inc/customizer.php:101
+msgid ""
+"Enable lazyload using bLazy (vanilla JS library). Leave this option enabled "
+"otherwise you will break the Internet. You do not want break the Internet, "
+"right?"
+msgstr ""
+
+#: ../inc/customizer.php:116
+msgid "Background Image For Previous Pager"
+msgstr ""
+
+#: ../inc/customizer.php:117
+msgid "Image used as bacground in \"previous\" post(s) navigation."
+msgstr ""
+
+#: ../inc/customizer.php:132
+msgid "Background Image For Next Pager"
+msgstr ""
+
+#: ../inc/customizer.php:133
+msgid "Image used as bacground in \"next\" post(s) navigation."
+msgstr ""
+
+#: ../inc/customizer.php:148
+msgid "Bio in header has 3 lines"
+msgstr ""
+
+#: ../inc/customizer.php:149
+msgid ""
+"Enable this if your \"about/menu\" text in the header has only 3 lines. This "
+"option will fit logo/gravatar size with the bio length."
+msgstr ""
+
+#: ../inc/customizer.php:164
+msgid "Layout width"
+msgstr ""
+
+#: ../inc/customizer.php:165
+msgid ""
+"You can set custom layout width here. Default value is 56rem (1rem is "
+"usually 16px)."
+msgstr ""
+
+#: ../inc/customizer.php:180
+msgid "Move categories and tags to end of the post"
+msgstr ""
+
+#: ../inc/customizer.php:181
+msgid ""
+"This setting displays categories and tags on the end of the post. If your "
+"average post has 10+ tags, you want to use this option."
+msgstr ""
+
+#: ../inc/theme-panel.php:9
+msgid "Digital Nomad"
+msgstr ""
+
+#: ../inc/theme-panel.php:22
+msgid "Welcome to Digital Nomad"
+msgstr "Witamy serdecznie, dobro došli"
+
+#: ../inc/theme-panel.php:24
+msgid "Congrats on choosing Digital Nomad, theme for digital nomads like you."
+msgstr ""
+
+#: ../inc/theme-panel.php:27
+msgid "Theme Homepage"
+msgstr ""
+
+#: ../inc/theme-panel.php:29
+msgid "Configuration"
+msgstr ""
+
+#: ../inc/theme-panel.php:49
+#, php-format
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis posuere "
+"massa, ac porta risus. Sed elit turpis, imperdiet &lt;a href=\"%1$s\"&gt;"
+"home&lt;/a&gt; lectus vel, eleifend tempor diam. &lt;a href=\"%2$s\"&gt;"
+"Archive&lt;/a&gt; finibus aliquam est, sed tincidunt ipsum congue et. "
+"Integer a gravida enim, vitae tempor leo."
+msgstr ""
+
+#: ../inc/theme-panel.php:60
+msgid "Under \"Site Identity\" set square \"Logo\" and \"Site Icon\"."
+msgstr ""
+
+#: ../inc/theme-panel.php:61
+msgid "Under \"Header Image\" set background picture for header."
+msgstr ""
+
+#: ../inc/theme-panel.php:62
+msgid ""
+"Under \"Homepage Settings\" use \"Your latest posts\" as homepage display."
+msgstr ""
+
+#: ../inc/theme-panel.php:63
+msgid "Under \"Digital Nomad Options\":"
+msgstr ""
+
+#: ../inc/theme-panel.php:65
+msgid "Set \"Background Image For Footer\""
+msgstr ""
+
+#: ../inc/theme-panel.php:66
+msgid ""
+"Set \"Default Featured Image\", image used in post archives as post preview "
+"when no feature image is selected."
+msgstr ""
+
+#: ../inc/theme-panel.php:67
+msgid ""
+"Select static \"Archive Page\" which will be used as an archive for all "
+"posts. Date archives are disabled by default and will return 404 if no "
+"archive page is selected."
+msgstr ""
+
+#: ../inc/theme-panel.php:68
+msgid ""
+"Enable \"Infinite Scroll\" for latest posts, categories and tags. Custom "
+"post types and custom taxonomies are also supported."
+msgstr ""
+
+#: ../inc/theme-panel.php:69
+msgid ""
+"Enable \"Lazyload\" for latest posts, categories and tags. NOTE: Images in "
+"posts are not nativelly lazyloaded"
+msgstr ""
+
+#: ../inc/theme-panel.php:70
+msgid ""
+"Set \"Background Image For Next & Previous Pager\" for &lt;noscript&gt; "
+"support."
+msgstr ""
+
+#: ../inc/theme-panel.php:75
+msgid "That's it!"
+msgstr ""
+
+#: ../inc/theme-panel.php:77
+msgid ""
+"NOTE: Everytime you install new theme disable cache plugins since they add "
+"new layer of complexity. Turn cache plugins back on after everything is "
+"configured correctly."
+msgstr ""
+
+#: ../inc/theme-panel.php:79
+msgid "Recommended Plugins"
+msgstr "Tieto pluginy si tam nainštaluj"
+
+#: ../inc/theme-panel.php:82
+msgid "reSmush.it Image Optimizer"
+msgstr ""
+
+#: ../inc/theme-panel.php:83
+msgid ""
+"Digital Nomad theme relies heavy on images. reSmush.it is free service "
+"providing image size reduction based on several advanced algorithms. The API "
+"accept JPG, PNG and GIF files up to 5MB. Set reSmush.it quality to 82."
+msgstr ""
+
+#: ../inc/theme-panel.php:86
+msgid "Yoast SEO"
+msgstr ""
+
+#: ../inc/theme-panel.php:87
+msgid ""
+"My favorite option when it comes to SEO plugin for WordPress. Yoast SEO "
+"generates sitemap.xml, sets page titles, creates metatags, etc."
+msgstr ""
+
+#: ../inc/theme-panel.php:92
+msgid "Code Syntax Block"
+msgstr ""
+
+#: ../inc/theme-panel.php:93
+msgid "A plugin to extend Gutenberg code block with syntax highlighting."
+msgstr ""
+
+#: ../inc/theme-panel.php:96
+msgid "WP Super Cache"
+msgstr ""
+
+#: ../inc/theme-panel.php:97
+msgid ""
+"Do not leave your site without enabled cache. WP Super Cache from Automattic "
+"does a great job."
+msgstr ""
+
+#: ../inc/theme-panel.php:101
+msgid "Post-installation Actions"
+msgstr ""
+
+#: ../inc/theme-panel.php:104
+msgid "Leave a review"
+msgstr "Sprav 5* recenziu"
+
+#: ../inc/theme-panel.php:105
+msgid ""
+"If you like Digital Nomad, review the theme on WordPress.org. Leave a review "
+"even if you don't like it."
+msgstr ""
+"Sprav 5* recenziu a na najbližšom WordCampe  máš u mňa pivo (alebo džúsik)."
+
+#: ../inc/theme-panel.php:108
+msgid "Feature Requests"
+msgstr "Požiadavka na fičúru"
+
+#: ../inc/theme-panel.php:109
+msgid "Send feature request for Digital Nomad theme."
+msgstr "Tu ma môžeš otravovať ak ti v téme chýba nejaká fičúra."
+
+#: ../inc/theme-panel.php:114
+msgid "Follow me on Twitter"
+msgstr "Davaj odber na Twittery"
+
+#: ../inc/theme-panel.php:115
+msgid "If you like my work, follow me on Twitter."
+msgstr "Davaj odber na Twittery inak ti mačka Jacky príde roškrabať tvár."
+
+#: ../inc/theme-panel.php:119
+msgid "What theme does and does not"
+msgstr ""
+
+#: ../inc/theme-panel.php:121
+msgid ""
+"Theme doesn't require jQuery so (after additional optimalization) you can "
+"easily reach out high score in Google's PageSpeed Insights."
+msgstr ""
+
+#: ../inc/theme-panel.php:122
+msgid ""
+"Theme doesn't support post-formats. I have personally never used this "
+"WordPress feature and that's why I didn't add support."
+msgstr ""
+
+#: ../inc/theme-panel.php:123
+msgid ""
+"Theme lacks built-in feature for GoogleFonts. Our motivation for working on "
+"open-source projects is mostly internal satisfaction, right? GoogleFonts "
+"harms my internal satisfaction. They mean additional requests, additional "
+"bandwidth, another privacy leak. I don't like them, I don't want them. But I "
+"understand that some of you like them, some of you want them. We can make a "
+"deal: Create a snipped code which can be inserted into child's function.php "
+"and I will write documentation. If you read this sentence, so far nobody did "
+"so :-)"
+msgstr ""
+
+#: ../inc/theme-panel.php:124
+msgid ""
+"Within the concept of the design, \"Site Title\" and \"Tagline\" are printed "
+"in the code in the form of logo's (gravatar's) \"ALT\" and \"TITLE\" tag "
+"instead of to be displayed as <H1> text somewhere in the header. Bots can "
+"still scrap the information."
+msgstr ""
+
+#: ../inc/theme-panel.php:125
+msgid ""
+"Theme supports navigation menus (first level only, no sub-items). You can "
+"also use short \"menu/about text\" in the header which can be hotlinked to "
+"various sections within or outside of the site. This is the prefered way of "
+"navigational hotlinking for the Digital Nomad theme."
+msgstr ""
+
+#: ../inc/theme-panel.php:127
+msgid "@TODO"
+msgstr ""
+
+#: ../inc/theme-panel.php:129
+msgid "Add native lazyloading for post images."
+msgstr ""
+
+#: ../inc/theme-panel.php:130
+msgid "Add Medium like zoom for post images."
+msgstr ""
+
+#: ../inc/theme-panel.php:133
+msgid "It's not in theme, it's in the content! But good theme also helps..."
+msgstr ""
+
+#: ../inc/theme-setup.php:11
+msgid "Header text"
+msgstr ""
+
+#: ../inc/theme-setup.php:12
+msgid ""
+"Menu/about text for Header sidebar. Recommended widget type is \"Custom HTML"
+"\" widget. NOTE: If you use \"Main menu\", this sidebar is hidden (use "
+"\"Newsletter\" sidebar instead)."
+msgstr ""
+
+#: ../inc/theme-setup.php:21
+msgid "Newsletter"
+msgstr ""
+
+#: ../inc/theme-setup.php:22
+msgid ""
+"Space under main header block (gravatar + \"menu/about\") for additional "
+"widgets like newsletter."
+msgstr ""
+
+#: ../inc/theme-setup.php:92
+msgid "Archive"
+msgstr ""
+
+#: ../inc/theme-setup.php:97
+msgid "Header default image"
+msgstr ""
+
+#: ../inc/theme-setup.php:101 ../inc/theme-setup.php:109
+#: ../inc/theme-setup.php:113
+msgid "Footer default image"
+msgstr ""
+
+#: ../inc/theme-setup.php:105
+msgid "Feature default image"
+msgstr ""
+
+#: ../inc/theme-setup.php:122
+msgid "About like menu"
+msgstr ""
+
+#: ../inc/theme-setup.php:124
+#, php-format
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis posuere "
+"massa, ac porta risus. Sed elit turpis, imperdiet <a href=\"%1$s\">home</a> "
+"lectus vel, eleifend tempor diam. <a href=\"%2$s\">Archive</a> finibus "
+"aliquam est, sed tincidunt ipsum congue et. Integer a gravida enim, vitae "
+"tempor leo."
+msgstr ""
+
+#: ../inc/theme-setup.php:139
+msgid "Main menu"
+msgstr ""
+
+#: ../templates/archive-title.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Výsledky vyhľadávania pre: %s"
+
+#: ../templates/archive-title.php:18
+msgid "Page not found"
+msgstr "Stránka nenájdená"
+
+#: ../templates/archive-title.php:21
+msgid "Asides"
+msgstr ""
+
+#: ../templates/archive-title.php:24
+msgid "Images"
+msgstr ""
+
+#: ../templates/archive-title.php:27
+msgid "Videos"
+msgstr ""
+
+#: ../templates/archive-title.php:30
+msgid "Quotes"
+msgstr ""
+
+#: ../templates/archive-title.php:33
+msgid "Links"
+msgstr ""
+
+#: ../templates/post-none.php:5
+msgid "No content, empty, zero, nothing..."
+msgstr "Bez obsahu, prázdne, nula, nič..."
+
+#: ../templates/post-single.php:18
+#, php-format
+msgid "Permalink for: %s"
+msgstr "Trvalý odkaz pre: %s"

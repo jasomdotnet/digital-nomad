@@ -30,7 +30,7 @@
 							</div><!-- .stabilize -->
 							<?php if ( is_front_page() ): ?>
 								<div id="jump_down">
-									<a href="#content"><?php esc_html_e( 'Jump Down', 'digital-nomad' ); ?></a>
+									<a href="#content"><?php esc_html_e( 'Skip to content', 'digital-nomad' ); ?></a>
 								</div>
 							<?php endif; ?>
 						</div><!-- .inner_content -->

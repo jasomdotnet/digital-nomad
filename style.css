@@ -15,7 +15,7 @@ html, body {
     height: 100%; 
     line-height: 1.5;
 }
-html, body, input, textarea, select, li, label {
+html, body, input, textarea, select, li, label, p, time, #spinner {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 100%;
 }
@@ -121,6 +121,7 @@ body:not(.intended_front_page) #jump_down  {
 }
 .main_menu_on .header_text {
     text-align: center;
+    width: 100%;
 }
 .main_header_block {
     display: inherit;
@@ -365,12 +366,6 @@ figcaption {
     margin-bottom: 0;
 }
 /* post archive end*/
-.search-form {
-    text-align: center;
-}
-input.search-field {
-    margin: 1em 0;
-}
 .archive_table {
     display: table;
     width: 100%;
@@ -446,7 +441,7 @@ hr {
     visibility: visible;
     opacity: 1;
 }
-#spinner {    
+#spinner {
 }
 /** https://epic-spinners.epicmax.co/ **/
 /** css animated spinner **/
@@ -491,7 +486,16 @@ hr {
     }
 }
 /** css animated spinner **/
-/** comments **/
+/** comments + forms + search **/
+.search-form {
+    text-align: center;
+}
+.search-form label {
+    display: inline;
+}
+.search-field {
+    margin-bottom: 1em;
+}
 .outher_respond {
     background-color: #e5e5e5;
     clear: both;
@@ -504,47 +508,54 @@ hr {
 #respond p:first-child {
     margin-top: 0;
 }
-#respond label {
+label {
     display: block;
     font-size: 1em;
 }
-#respond .comment-form-cookies-consent label {
+.comment-form-cookies-consent label {
     display: inline;
     margin-left: 0.5em;
 }
 
-#respond textarea, 
-#respond input[type='text'],
-#respond input[type='email'],
-#respond input[type='url'] {
+textarea, 
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='search']{
     font-size: 1em;
-    width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 0.125em;
     background-color: #fff;
-    border: none;
+    border: 1px solid rgba(0,0,0,0.3);
     color: #000;
     -webkit-box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.25);
     box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.25);
 }
-#respond textarea:hover, 
-#respond input[type='text']:hover,
-#respond input[type='email']:hover,
-#respond input[type='url']:hover {
-    -webkit-box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.5);
-    -moz-box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.5);
-    box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.5);
+textarea, 
+input[type='text'],
+input[type='email'],
+input[type='url'] {
+    width: 100%;
 }
-#respond textarea:focus, 
-#respond input[type='text']:focus,
-#respond input[type='email']:focus,
-#respond input[type='url']:focus {
+textarea:hover, 
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='url']:hover,
+input[type='search']:hover,
+textarea:focus, 
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='search']:focus {
     -webkit-box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.5);
     -moz-box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.5);
     box-shadow: 0.125em 0.125em 0.25em 0 rgba(0,0,0,0.5);
     outline: none;
+}
+input[type='submit'] {
+    padding: 0.75rem;
 }
 .comment-notes,
 .comment-form-cookies-consent,
@@ -616,26 +627,28 @@ span.required {
 #footer_inside a:hover {
     text-decoration: none;
 }
+.footer_menu {
+    margin-top: 1em;
+}
 figure {
     margin: 0;
 }
-iframe[src*="youtube.com"] {
-    width: 100%;
-}
-figure.wp-block-embed.is-type-video {
+figure.wp-block-embed-youtube {
     position: relative;
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
 }
-figure.wp-block-embed.is-type-video iframe {
+figure.wp-block-embed-youtube iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-
+iframe[src*="youtube.com"] {
+    width: 100%;
+}
 table {
     border-spacing: 0.125em;
     border-collapse: separate;
@@ -699,6 +712,9 @@ table th {
     .comments-pagination {
         font-size: 1.125em;
     }
+    .search-field {
+        margin-right: 0.5em;
+    }    
 }
 @media (min-width: 800px) {
     .main_title {
@@ -739,14 +755,14 @@ table th {
 }
 /* Extra devices (desktops, 992px and up) */
 @media (min-width: 1240px) {
-    html, body, input, textarea, select, li, label {
+    html, body, input, textarea, select, li, label, p, time, #spinner {
         font-size: 105%;
     }
 }
 
 /* Large devices (large desktops, 1200px and up)*/ 
 @media (min-width: 1480px) { 
-    html, body, input, textarea, select, li, label {
+    html, body, input, textarea, select, li, label, p, time, #spinner {
         font-size: 115%;
     }
     .preview_content a {

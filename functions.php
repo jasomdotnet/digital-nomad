@@ -23,7 +23,8 @@ if (!function_exists( 'digitalnomad_add_styles' )) {
      * Styles
      */
     function digitalnomad_add_styles() {
-        wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style.css', array(), filemtime( dirname( __FILE__ ) . '/style.css' )  );
+        //wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style.css', array(), filemtime( dirname( __FILE__ ) . '/style.css' ) );
+        wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style-empty.css' );
         wp_add_inline_style( 'digital-nomad', digitalnomad_header_image_background() );
 
     }
@@ -31,6 +32,12 @@ if (!function_exists( 'digitalnomad_add_styles' )) {
 }
 
 add_action( 'wp_print_styles', 'digitalnomad_add_styles' );
+
+add_action( 'wp_head', function() {
+    echo '<style>' . PHP_EOL;
+    include 'style.css';
+    echo '</style>' . PHP_EOL;
+} );
 
 if (!function_exists( 'digitalnomad_header_image_background' )) {
 
@@ -153,8 +160,8 @@ if (!function_exists( 'digitalnomad_config_for_main_js' )) {
             $code .= 'var ajaxNonce = "' . wp_create_nonce( 'ajax-nonce' ) . '";' . PHP_EOL;
             $code .= 'var postTypeObject = "' . digitalnomad_get_archive_post_type_object() . '";' . PHP_EOL; // includes/ajax-functions.php
             $code .= 'var whatKind = "' . digitalnomad_get_what_kind_details() . '";' . PHP_EOL; // includes/ajax-functions.php
-            $code .= 'var rescrollMsg = "' . __( 'Rescroll to load news posts.', 'digital-nomad' ) . '";' . PHP_EOL;
-            $code .= 'var noMorePostsMsg = "<div>' . __( 'No more posts', 'digital-nomad' ) . '</div>";' . PHP_EOL;
+            $code .= 'var rescrollMsg = "' . __( 'Rescroll to load next posts.', 'digital-nomad' ) . '";' . PHP_EOL;
+            $code .= 'var noMorePostsMsg = "<div>' . __( 'That\'s all', 'digital-nomad' ) . '</div>";' . PHP_EOL;
             $code .= 'var spinnerHTML = "<div class=\'hcs\'><div class=\'cir cir-1\'></div><div class=\'cir cir-2\'></div></div>";' . PHP_EOL;
             $code .= 'var unexpectedMsg = "' . __( 'Something unexpected happened with AJAX request :-/', 'digital-nomad' ) . '";' . PHP_EOL;
             $code .= 'document.getElementById("spinner").innerHTML = spinnerHTML;' . PHP_EOL;
@@ -191,7 +198,7 @@ if (!function_exists( 'digitalnomad_get_the_date' )) {
 
         $code .= '<time class="published" datetime="' . date( 'c', $published ) . '">' . date( $date_format, $published ) . '</time>';
         if ($published != $updated) {
-            $code .= ', <span class="last_update_text">' . __( 'edited:', 'digital-nomad' ) . '</span> <time class="updated" datetime="' . date( 'c', $updated ) . '">' . date( $date_format, $updated ) . '</time>';
+            $code .= ', <span class="last_update_text">' . __( 'updated:', 'digital-nomad' ) . '</span> <time class="updated" datetime="' . date( 'c', $updated ) . '">' . date_i18n( $date_format, $updated ) . '</time>';
         }
         return $code;
 
@@ -306,6 +313,10 @@ if (!function_exists( 'digitalnomad_get_random_post_object' )) {
             'posts_per_page' => 1,
             'post__not_in' => $not_in,
         );
+        // if polylang enabled
+        if (function_exists( 'pll_current_language' )) {
+            $args[ 'lang' ] = pll_current_language();
+        }
 
         $random_post = get_posts( $args );
         return $random_post[ 0 ];
@@ -513,7 +524,7 @@ if (!function_exists( 'digitalnomad_go_up_for_footer' )) {
     function digitalnomad_go_up_for_footer() {
 
         ?>
-        <a href="#header" class="gp" title="<?php esc_attr_e( '&uarr; Up', 'digital-nomad' ); ?>"><?php esc_html_e( 'Up &uarr; ', 'digital-nomad' ); ?></a>
+        <a href="#header" class="gp" title="<?php esc_attr_e( '&uarr; Up', 'digital-nomad' ); ?>"><?php esc_html_e( '&uarr; Up', 'digital-nomad' ); ?></a>
         <?php
 
     }
@@ -550,8 +561,45 @@ if (!function_exists( 'digitalnomad_basic_footer_text' )) {
 }
 
 add_action( 'digitalnomad_for_footer', 'digitalnomad_basic_footer_text' );
-// wp_footer #
-// post archive #
+
+if (!function_exists( 'digitalnomad_page_is_archive' )) {
+
+    /**
+     * Figures out if current page is Post Archive Page or not
+     * 
+     * @staticvar integer $archive_page_id
+     * @param integer $post_id
+     * @return boolean True if current page is Post Archive Page, false otherwise
+     */
+    function digitalnomad_page_is_archive( $post_id = null ) {
+
+        static $archive_page_id = null;
+
+        if ($archive_page_id === null) {
+
+            $archive_page_id = get_theme_mod( 'digitalnomad_archive_page', url_to_postid( 'archive' ) );
+        }
+
+        // if Post Archive page is set
+        if (!empty( $archive_page_id )) {
+
+            $curret_post_id = is_null( $post_id ) ? get_the_ID() : $post_id;
+
+            // Polylang integration
+            if (function_exists( 'pll_get_post' )) {
+                $curret_post_id = pll_get_post( $curret_post_id, pll_default_language() );
+            }
+            // TODO: WPML integration
+
+            return $curret_post_id == $archive_page_id;
+        }
+
+        return false;
+
+    }
+
+}
+
 if (!function_exists( 'digitalnomad_add_post_state' )) {
 
     /**
@@ -562,7 +610,7 @@ if (!function_exists( 'digitalnomad_add_post_state' )) {
      * @return type
      */
     function digitalnomad_add_post_state( $post_states, $post ) {
-        if ($post->ID == get_theme_mod( 'digitalnomad_archive_page', url_to_postid( 'archive' ) )) {
+        if (digitalnomad_page_is_archive( $post->ID )) {
             $post_states[] = __( 'Post Archive Page', 'digital-nomad' );
         }
         return $post_states;
@@ -587,7 +635,7 @@ if (!function_exists( 'digitalnomad_add_class_for_body_tag' )) {
             $classes[] = 'short_about';
         }
 
-        if ( has_nav_menu( 'main' ) ) {
+        if (has_nav_menu( 'main' )) {
             $classes[] = 'main_menu_on';
         }
 
@@ -596,9 +644,7 @@ if (!function_exists( 'digitalnomad_add_class_for_body_tag' )) {
             return $classes;
         }
 
-        $archive_page_id = get_theme_mod( 'digitalnomad_archive_page', url_to_postid( 'archive' ) );
-
-        if (!empty( $archive_page_id ) && $archive_page_id == get_the_ID()) {
+        if (digitalnomad_page_is_archive()) {
             $classes[] = 'main-archive';
         }
         return $classes;
@@ -621,9 +667,9 @@ if (!function_exists( 'digitalnomad_remove_date_archives' )) {
 
         //if we are on date archive page
         if (is_date()) {
-            $archive_page = get_theme_mod( 'digitalnomad_archive_page', url_to_postid( 'archive' ) );
-            if ($archive_page) {
-                wp_redirect( esc_url( get_page_link( $archive_page ) ) );
+            $archive_page_id = get_theme_mod( 'digitalnomad_archive_page', url_to_postid( 'archive' ) );
+            if ($archive_page_id) {
+                wp_redirect( esc_url( get_page_link( $archive_page_id ) ) );
                 die();
             } else {
                 global $wp_query;
@@ -646,15 +692,21 @@ if (!function_exists( 'digitalnomad_add_post_archive_to_page' )) {
 
         if (is_page()) {
 
-            $archive_page_id = get_theme_mod( 'digitalnomad_archive_page', url_to_postid( 'archive' ) );
-
-            if (!empty( $archive_page_id ) && $archive_page_id == get_the_ID()) {
+            if (digitalnomad_page_is_archive()) {
 
                 do_action( 'digitalnomad_post_archive_before' );
 
                 get_search_form();
 
-                $the_query = new WP_Query( array('posts_per_page' => '-1') );
+                $args = [
+                    'posts_per_page' => '1',
+                ];
+                // if polylang enabled
+                if (function_exists( 'pll_current_language' )) {
+                    $args[ 'lang' ] = pll_current_language();
+                }
+                // new query object
+                $the_query = new WP_Query( $args );
 
                 if ($the_query->have_posts()) {
 
@@ -755,12 +807,17 @@ if (!function_exists( 'digitalnomad_get_latest_article' )) {
      * Returns latest post for 404.php page
      */
     function digitalnomad_get_latest_article() {
-        $args = array(
+        $args = [
             'numberposts' => 1,
             'post_type' => 'post',
             'post_status' => 'publish',
             'suppress_filters' => true,
-        );
+        ];
+
+        // if polylang enabled
+        if (function_exists( 'pll_current_language' )) {
+            $args[ 'lang' ] = pll_current_language();
+        }
 
         $recent_post = wp_get_recent_posts( $args, ARRAY_A );
 
@@ -898,7 +955,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
             }
 
             ?>
-            <<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped       ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+            <<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                       ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
             <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
                 <header class="comment-meta">
@@ -922,7 +979,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
                     </h4><!-- .comment-author -->
 
                     <?php if ('0' == $comment->comment_approved) : ?>
-                        <div class="comment-awaiting-moderation"><em><?php echo $moderation_note; ?></em></div><?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped       ?>
+                        <div class="comment-awaiting-moderation"><em><?php echo $moderation_note; ?></em></div><?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                      ?>
                     <?php endif; ?>
                 </header><!-- .comment-meta -->
 
@@ -931,7 +988,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
                 </div><!-- .comment-content -->
 
                 <footer class="comment-metadata">
-                    <?php do_action( 'comment_metadata_before' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound  ?>
+                    <?php do_action( 'comment_metadata_before' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound   ?>
                     <?php
                     comment_reply_link(
                             array_merge(
@@ -947,7 +1004,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
 
                     ?>
                     <?php edit_comment_link( __( 'Edit', 'digital-nomad' ), '<span class="edit">', '</span>' ); ?>
-                    <?php do_action( 'comment_metadata_after' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound    ?>
+                    <?php do_action( 'comment_metadata_after' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound     ?>
                 </footer><!-- .comment-metadata -->
 
             </article><!-- .comment-body -->

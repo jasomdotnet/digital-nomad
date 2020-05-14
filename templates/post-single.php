@@ -37,12 +37,16 @@
 		<?php do_action( 'digitalnomad_inner_content_ends' ); ?>
 
 	</div>
+    
+	<?php do_action( 'digitalnomad_before_comments_template' ); ?>
 
 	<?php
 	if ( comments_open() ):
 		comments_template();
 	endif;
 	?>
+    
+	<?php do_action( 'digitalnomad_after_comments_template' ); ?>
 
 	<?php digitalnomad_the_posts_navigation(); ?>
 </article>

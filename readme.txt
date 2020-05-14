@@ -120,6 +120,8 @@ Source: https://pxhere.com/en/photo/1562371
 * Released: March 15, 2020
 
 = 1.1.1 =
-* Added support for menu (Main menu)
+* Added support for menu
 * Menu supports first level only (no sub-items)
-* Released: March 29, 2020
+* Added support for Polylang + localization adjustments
+* Small improvements
+* Released: May 14, 2020

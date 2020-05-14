@@ -2,7 +2,16 @@
 
     <div id="footer_inside" class="text_shadow">
 		<span id="spinner"></span>
-		<?php do_action( 'digitalnomad_for_footer' ); ?>
+		<?php
+			if (has_nav_menu( 'footer' )) {
+				wp_nav_menu( array(
+					'theme_location' => 'footer',
+					'container' => 'nav',
+					'container_class' => 'footer_menu dn_menu',
+				) );
+			}
+			do_action( 'digitalnomad_for_footer' );
+		?>
     </div>
 
 </footer><!-- #footer -->

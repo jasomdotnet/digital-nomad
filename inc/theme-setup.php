@@ -40,8 +40,6 @@ if (!function_exists( 'digitalnomad_theme_features' )) {
 
         // Add theme support for Automatic Feed Links
         add_theme_support( 'automatic-feed-links' );
-        // Add thene support for Menus
-        add_theme_support( 'menus' );
         // Add theme support for Featured Images
         add_theme_support( 'post-thumbnails' );
         // https://developer.wordpress.org/themes/functionality/custom-logo/
@@ -134,10 +132,12 @@ if (!function_exists( 'digitalnomad_theme_features' )) {
                 'digitalnomad_next_bg' => '{{image-bg-next}}',
             ),
         ) );
-        // menu registration
+        //registers menu
         register_nav_menus( array(
-                'main' => __( 'Main menu', 'digital-nomad' )
+            'main' => __( 'Main menu', 'digital-nomad' ),
+            'footer' => __( 'Footer menu', 'digital-nomad' ),
         ) );
+
     }
 
 }
