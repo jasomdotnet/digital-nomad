@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.1.1
+Version: 1.1.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -125,3 +125,7 @@ Source: https://pxhere.com/en/photo/1562371
 * Added support for Polylang + localization adjustments
 * Small improvements
 * Released: May 14, 2020
+
+= 1.1.2 =
+* Added 'header_middle' do_action
+* Released: May 16, 2020

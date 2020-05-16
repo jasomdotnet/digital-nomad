@@ -19,6 +19,7 @@
 							<div class="stabilize header_text text_shadow">
 								<div class="main_header_block">
 									<?php get_template_part( 'templates/header', 'logo' ); ?>
+									<?php do_action( 'digitalnomad_header_middle_action' ); ?>
 									<?php get_template_part( 'templates/header', 'text' ); ?>
 								</div><!-- .main_header_block -->
 								<noscript id="general"><?php esc_html_e( 'Some features may not work without JavaScript', 'digital-nomad' ); ?></noscript>
