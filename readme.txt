@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.1.2
+Version: 1.1.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -129,3 +129,7 @@ Source: https://pxhere.com/en/photo/1562371
 = 1.1.2 =
 * Added 'header_middle' do_action
 * Released: May 16, 2020
+
+= 1.1.3 =
+* Commented out left dev function
+* Released: May 17, 2020
