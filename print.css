@@ -1,0 +1,28 @@
+/* styles for print */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+/*img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}*/
+blockquote, table, pre {
+    page-break-inside: avoid;
+}
+ul, ol, dl  {
+    page-break-before: avoid;
+}
+body.custom-background {
+    background-color:  white;
+}
+a::after{
+    content: " (" attr(href) ") ";
+}
+.post_nav,
+.gp,
+#footer,
+nav.main_menu {
+    display: none;
+    visibility: hidden;
+}

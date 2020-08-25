@@ -2,7 +2,7 @@
 Contributors: jasom
 Requires at least: 5.0
 Tested up to: 5.2
-Version: 1.1.4
+Version: 1.1.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -137,3 +137,8 @@ Source: https://pxhere.com/en/photo/1562371
 = 1.1.4 =
 * Fixed bug in Archive page
 * Released: Jun 11, 2020
+
+= 1.1.5 =
+* Fixed Youtube embed videos
+* Added print.css style sheet
+* Released: Aug 25, 2020

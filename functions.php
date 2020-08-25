@@ -26,6 +26,7 @@ if (!function_exists( 'digitalnomad_add_styles' )) {
         wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style.css', array(), filemtime( dirname( __FILE__ ) . '/style.css' ) );
         //wp_enqueue_style( 'digital-nomad', get_template_directory_uri() . '/style-empty.css' ); // uncomment for development purposes
         wp_add_inline_style( 'digital-nomad', digitalnomad_header_image_background() );
+        wp_enqueue_style( 'digital-nomad-print', get_template_directory_uri() . '/print.css', array(), filemtime( dirname( __FILE__ ) . '/print.css' ), 'print' );
 
     }
 
@@ -702,7 +703,7 @@ if (!function_exists( 'digitalnomad_add_post_archive_to_page' )) {
                 get_search_form();
 
                 $args = [
-                    'posts_per_page' => '-1',
+                    'posts_per_page' => '1',
                 ];
                 // if polylang enabled
                 if (function_exists( 'pll_current_language' )) {
