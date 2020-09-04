@@ -703,7 +703,7 @@ if (!function_exists( 'digitalnomad_add_post_archive_to_page' )) {
                 get_search_form();
 
                 $args = [
-                    'posts_per_page' => '1',
+                    'posts_per_page' => '-1', // strange fix in 1.1.6
                 ];
                 // if polylang enabled
                 if (function_exists( 'pll_current_language' )) {
