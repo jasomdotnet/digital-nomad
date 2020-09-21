@@ -7,6 +7,11 @@ if ( ! function_exists( 'digitalnomad_infinite_load' ) ) {
      */
     function digitalnomad_infinite_load() {
         
+	// increase AJAX nonce lifetime is the case site uses cache plugin with cache duration longer than 24h
+	if (get_theme_mod( 'digitalnomad_nonce_lifetime', null )) {
+	    add_filter( 'nonce_life', 'digitalnomad_ajax_nonce_lifetime' );
+	}
+
 	if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
 	    exit();
 	}
@@ -73,7 +78,7 @@ if ( ! function_exists( 'digitalnomad_infinite_load' ) ) {
 
 	echo json_encode( $arr );
 
-	die();
+	exit(); // exit sounds better
     }
 
 }

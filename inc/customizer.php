@@ -161,7 +161,7 @@ if (!function_exists( 'digitalnomad_customizer_register' )) {
         ) );
         $wp_customize->add_control(
                 new WP_Customize_Control( $wp_customize, 'digitalnomad_layout_width', array(
-                    'label' => __( 'Layout width', 'digital-nomad' ),
+                    'label' => __( 'Layout Width', 'digital-nomad' ),
                     'description' => __( 'You can set custom layout width here. Default value is 56rem (1rem is usually 16px).', 'digital-nomad' ),
                     'section' => 'digitalnomad_options',
                     'type' => 'number',
@@ -182,6 +182,22 @@ if (!function_exists( 'digitalnomad_customizer_register' )) {
                     'section' => 'digitalnomad_options',
                     'type' => 'checkbox',
                     'settings' => 'digitalnomad_categories_position',
+                ) ) );
+
+        // digitalnomad_nonce_lifetime
+        $wp_customize->add_setting( 'digitalnomad_nonce_lifetime', array(
+            'capability' => 'edit_theme_options',
+            'type' => 'theme_mod',
+            'default' => null,
+            'sanitize_callback' => 'absint',
+        ) );
+        $wp_customize->add_control(
+                new WP_Customize_Control( $wp_customize, 'digitalnomad_nonce_lifetime', array(
+                    'label' => __( 'Nonce Lifetime', 'digital-nomad' ),
+                    'description' => __( 'Ignore this setting if everything works. Default Nonce Lifetime in WordPress is 24h. If you set in some cache plug-in Cache Duration above 24h, you may face conflict with theme\'s AJAX. Here you can increase AJAX Nonce Lifetime to avoid similar. In general, Nonce Lifetime must last longer than Cache Duration. The number represents the hours.', 'digital-nomad' ),
+                    'section' => 'digitalnomad_options',
+                    'type' => 'number',
+                    'settings' => 'digitalnomad_nonce_lifetime',
                 ) ) );
 
     }

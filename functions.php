@@ -37,11 +37,11 @@ add_action( 'wp_print_styles', 'digitalnomad_add_styles' );
 /**
  * Uncomment for development purposes
  */
-/*add_action( 'wp_head', function() {
-    echo '<style>' . PHP_EOL;
-    include 'style.css';
-    echo '</style>' . PHP_EOL;
-} );*/
+/* add_action( 'wp_head', function() {
+  echo '<style>' . PHP_EOL;
+  include 'style.css';
+  echo '</style>' . PHP_EOL;
+  } ); */
 
 if (!function_exists( 'digitalnomad_header_image_background' )) {
 
@@ -128,7 +128,7 @@ if (!function_exists( 'digitalnomad_add_scripts' )) {
      */
     function digitalnomad_add_scripts() {
 
-        $theme_version = wp_get_theme()->get( 'Version' );
+        $theme_version = wp_get_theme( get_template() )->get( 'Version' );
 
         if (get_theme_mod( 'digitalnomad_blazy_lazyload', true ) && ( is_archive() || is_home() )) {
             wp_enqueue_script( 'blazy-lazyload', get_template_directory_uri() . '/js/blazy.min.js', null, $theme_version, true );
@@ -157,20 +157,45 @@ if (!function_exists( 'digitalnomad_config_for_main_js' )) {
      * Adds configuration for main javascript
      */
     function digitalnomad_config_for_main_js() {
+
+        // increase AJAX nonce lifetime is the case site uses cache plugin with cache duration longer than 24h
+        if (get_theme_mod( 'digitalnomad_nonce_lifetime', null )) {
+            add_filter( 'nonce_life', 'digitalnomad_ajax_nonce_lifetime' );
+            $nonce = wp_create_nonce( 'ajax-nonce' );
+            remove_filter( 'nonce_life', 'digitalnomad_ajax_nonce_lifetime' );
+        } else {
+            $nonce = wp_create_nonce( 'ajax-nonce' );
+        }
+
         $code = null;
         if (get_theme_mod( 'digitalnomad_infinite_scroll', true ) && ( is_archive() || is_home() )) {
 
             $code .= 'var postUrl = "' . admin_url( 'admin-ajax.php' ) . '";' . PHP_EOL;
-            $code .= 'var ajaxNonce = "' . wp_create_nonce( 'ajax-nonce' ) . '";' . PHP_EOL;
+            $code .= 'var ajaxNonce = "' . $nonce . '";' . PHP_EOL;
             $code .= 'var postTypeObject = "' . digitalnomad_get_archive_post_type_object() . '";' . PHP_EOL; // includes/ajax-functions.php
             $code .= 'var whatKind = "' . digitalnomad_get_what_kind_details() . '";' . PHP_EOL; // includes/ajax-functions.php
             $code .= 'var rescrollMsg = "' . __( 'Rescroll to load next posts.', 'digital-nomad' ) . '";' . PHP_EOL;
-            $code .= 'var noMorePostsMsg = "<div>' . __( 'That\'s all', 'digital-nomad' ) . '</div>";' . PHP_EOL;
+            $code .= 'var noMorePostsMsg = "' . __( 'That\'s all', 'digital-nomad' ) . '";' . PHP_EOL;
+            $code .= 'var noJsonMsg = "' . __( 'Server returned empty AJAX response. Probably some cache plugin is in conflict with nonce. Adjust \"Nonce Lifetime\" setting in Customizer or contact theme\'s developer.', 'digital-nomad' ) . '";' . PHP_EOL;
+            $code .= 'var noValidJsonMsg = "' . __( 'Server returned invalid jSon string. Contact theme\'s developer.', 'digital-nomad' ) . '";' . PHP_EOL;
+            $code .= 'var ajaxFailedMsg = "' . __( 'AJAX request failed. Contact theme\'s developer.', 'digital-nomad' ) . '";' . PHP_EOL;
             $code .= 'var spinnerHTML = "<div class=\'hcs\'><div class=\'cir cir-1\'></div><div class=\'cir cir-2\'></div></div>";' . PHP_EOL;
             $code .= 'var unexpectedMsg = "' . __( 'Something unexpected happened with AJAX request :-/', 'digital-nomad' ) . '";' . PHP_EOL;
             $code .= 'document.getElementById("spinner").innerHTML = spinnerHTML;' . PHP_EOL;
         }
         return $code;
+
+    }
+
+}
+
+if (!function_exists( 'digitalnomad_ajax_nonce_lifetime' )) {
+
+    /**
+     * Increases nonce lifetime for theme's AJAX
+     */
+    function digitalnomad_ajax_nonce_lifetime() {
+        return (int) get_theme_mod( 'digitalnomad_nonce_lifetime', 24 ) * HOUR_IN_SECONDS;
 
     }
 
@@ -959,7 +984,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
             }
 
             ?>
-            <<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                       ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+            <<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                            ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
             <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
                 <header class="comment-meta">
@@ -983,7 +1008,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
                     </h4><!-- .comment-author -->
 
                     <?php if ('0' == $comment->comment_approved) : ?>
-                        <div class="comment-awaiting-moderation"><em><?php echo $moderation_note; ?></em></div><?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                      ?>
+                        <div class="comment-awaiting-moderation"><em><?php echo $moderation_note; ?></em></div><?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                           ?>
                     <?php endif; ?>
                 </header><!-- .comment-meta -->
 
@@ -1008,7 +1033,7 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
 
                     ?>
                     <?php edit_comment_link( __( 'Edit', 'digital-nomad' ), '<span class="edit">', '</span>' ); ?>
-                    <?php do_action( 'comment_metadata_after' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound     ?>
+                    <?php do_action( 'comment_metadata_after' ); ?><?php // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound      ?>
                 </footer><!-- .comment-metadata -->
 
             </article><!-- .comment-body -->

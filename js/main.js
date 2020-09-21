@@ -17,20 +17,36 @@
 	    xhr.onload = function () {
 		// Process our return data
 		if ( xhr.status >= 200 && xhr.readyState == 4 ) {
+		    // What do when the request is empty
+		    if ( !xhr.responseText || xhr.responseText.length === 0 ) {
+			console.log( noJsonMsg );
+			spinner.innerHTML = '<div>' + noJsonMsg + '</div>';
+			enoughIsEnough();
+			return;
+		    }
 		    // What do when the request is successful
-		    var data = JSON.parse( xhr.responseText );
+		    var data;
+		    try {
+  			data = JSON.parse( xhr.responseText );
+		    }
+		    catch(error) {
+			console.log( noValidJsonMsg + ': ' + error.message );
+			spinner.innerHTML = '<div>' + noValidJsonMsg + '</div>';
+			enoughIsEnough();
+			return;
+		    }		    
 		    //var data = xhr.responseText;
 		    if ( data.content ) {
 			// Check if item isn't already in page (problem with double request)
 			// https://stackoverflow.com/a/51286985
 			if ( hayStack.indexOf( data.page ) === -1 ) {
 			    // Append template to dom
-			    content.insertAdjacentHTML( 'beforeend', data.content )
+			    content.insertAdjacentHTML( 'beforeend', data.content );
 			    hayStack.push( data.page );
 			    spinner.innerHTML = spinnerHTML;
 			} else {
 			    // Json response with duplicated data
-			    spinner.innerHTML = rescrollMsg;
+			    spinner.innerHTML = '<div>' + rescrollMsg + '</div>';
 			}
 
 
@@ -41,25 +57,29 @@
 
 		    } else if ( data.hasOwnProperty( 'noMoreContent' ) ) {
 			// Return "no more posts" and stop request
-			spinner.innerHTML = noMorePostsMsg;
+			spinner.innerHTML = '<div>' + noMorePostsMsg + '</div>';
 			enoughIsEnough();
 			return;
 		    } else {
 			console.log( unexpectedMsg )
-			spinner.innerHTML = unexpectedMsg;
+			spinner.innerHTML = '<div>' + unexpectedMsg + '</div>';
 			enoughIsEnough();
 			return;
 		    }
 		    offset += 1;
 		    if ( !observerSupport() ) {
-			// For older browsers limit new request for 2s
+			// For older browsers limit new request for 10s
 			setTimeout( function () {
 			    working = false;
-			}, 2000 )
+			}, 10000 )
 		    }
 		} else {
 		    // What do when the request fails
-		    console.log( 'AJAX request failed. Returned status is ' + xhr.status + '. That\'s all we know.' );
+		    console.log( ajaxFailedMsg );
+		    console.log( 'Returned status is ' + xhr.status + '. That\'s all we know.' );
+		    spinner.innerHTML = '<div>' + ajaxFailedMsg + '</div>';
+		    enoughIsEnough();
+		    return;
 		}
 
 	    };
