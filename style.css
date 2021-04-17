@@ -5,7 +5,7 @@ Author: Jasom Dotnet
 Author URI: https://www.jasom.net
 Description: Mobile-first one-column theme for digital nomads like you. It's not in theme, it's in content! But good theme also helps...
 Tested up to: 5.7
-Version: 1.1.8
+Version: 1.1.9
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -226,6 +226,7 @@ body:not(.intended_front_page) #jump_down  {
 }
 .aligncenter {
     margin: 0 auto;
+    text-align: center;
 }
 .alignleft {
     float: left;
@@ -766,9 +767,6 @@ table th {
 
 /* Large devices (large desktops, 1200px and up)*/ 
 @media (min-width: 1480px) { 
-    html, body, input, textarea, select, li, label, p, time, #spinner {
-        font-size: 115%;
-    }
     .preview_content a {
         height: 50vh;
     }
