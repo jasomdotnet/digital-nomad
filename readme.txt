@@ -1,8 +1,8 @@
 === Digital Nomad ===
 Contributors: jasom
 Requires at least: 5.0
-Tested up to: 5.2
-Version: 1.1.7
+Tested up to: 5.7
+Version: 1.1.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -150,3 +150,8 @@ Source: https://pxhere.com/en/photo/1562371
 = 1.1.7 =
 * Added Nonce Lifetime setting
 * Released: Sept 21, 2020
+
+= 1.1.8 =
+* Added Smoth scroll
+* Russian translation thanx to mr.unclesam
+* Released: April 14, 2021

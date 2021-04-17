@@ -1,0 +1,532 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Digital Nomad\n"
+"POT-Creation-Date: 2020-02-01 23:52+0100\n"
+"Language-Team: mr.unclesam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_html__;esc_html_e;esc_html_x;"
+"esc_attr__;esc_attr_e;esc_attr_x;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: ru_RU\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:12
+msgid "This is famous Error 404!"
+msgstr "Вы попали на 404!"
+
+#: ../404.php:18
+msgid "Goob job, you found a page that doesn't exist."
+msgstr "Вы счастливчик: нашли страницу, которой нет."
+
+#: ../404.php:21
+msgid "Try to use search form below or read my latest post:"
+msgstr "Попробуйте загуглить или посмотрите что-то из свежего:"
+
+#: ../comments.php:17
+msgid "&laquo; Previous Comments"
+msgstr "&laquo; Коменты раньше"
+
+#: ../comments.php:18
+msgid "Next Comments &raquo;"
+msgstr "Коменты позже &raquo;"
+
+#: ../functions.php:146
+msgid "Rescroll to load news posts."
+msgstr "Крутаните мышь — найдете еще картинок."
+
+#: ../functions.php:147
+msgid "No more posts"
+msgstr "Картинки закончились, прости"
+
+#: ../functions.php:149
+msgid "Something unexpected happened with AJAX request :-/"
+msgstr "Ой, вы сайт сломали, AJAX не работает"
+
+#: ../functions.php:182
+msgid "edited:"
+msgstr "ред:"
+
+#: ../functions.php:201
+#, php-format
+msgid "%s ago"
+msgstr "%s назад"
+
+#: ../functions.php:268
+msgid "More pages: "
+msgstr "Еще полистать: "
+
+#: ../functions.php:391
+msgid "Previous post:"
+msgstr "Назад на пост:"
+
+#: ../functions.php:399
+msgid "Next post:"
+msgstr "Вперед на пост:"
+
+#: ../functions.php:418
+msgid "&laquo; Previous Page"
+msgstr "&laquo; Пред. стр"
+
+#: ../functions.php:419
+msgid "Next Page &raquo;"
+msgstr "След. стр. &raquo;"
+
+#: ../functions.php:491
+msgid "&uarr; Up"
+msgstr "&uarr; Наверх"
+
+#: ../functions.php:491
+msgid "Up &uarr; "
+msgstr "Наверх &uarr; "
+
+#: ../functions.php:510
+#, php-format
+msgid "Powered by %s."
+msgstr "%s."
+
+#: ../functions.php:513
+#, php-format
+msgid "Themed by %s."
+msgstr "Дизайн %s."
+
+#: ../functions.php:534
+msgid "Post Archive Page"
+msgstr "Архив"
+
+#: ../functions.php:629
+msgid "There are no posts."
+msgstr "Здесь ничего нет."
+
+#: ../functions.php:702
+msgid "(no title)"
+msgstr "(без названия)"
+
+#: ../functions.php:798
+msgid "Your comment is awaiting moderation."
+msgstr "Коммент на модерации, подожди."
+
+#: ../functions.php:800
+msgid ""
+"Your comment is awaiting moderation. This is a preview, your comment will be "
+"visible after it has been approved."
+msgstr ""
+"Коммент на модерации, а ты видишь превью. Окончательно появится после "
+"одобрения."
+
+#: ../functions.php:810
+#, php-format
+msgid "%s <span class=\"says\">said on</span>"
+msgstr "%s <span class=\"says\">написал</span>"
+
+#: ../functions.php:818
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s в %2$s"
+
+#: ../functions.php:848
+msgid "Edit"
+msgstr "Править"
+
+#: ../header.php:11
+msgid "Skip to content"
+msgstr "К контенту"
+
+#: ../header.php:21
+msgid "Some features may not work without JavaScript"
+msgstr "Часть функций отключена без JS"
+
+#: ../header.php:25
+msgid "Jump Down"
+msgstr "Вниз"
+
+#: ../inc/customizer.php:20
+msgid "Digital Nomad Settings"
+msgstr "Настройки темы"
+
+#: ../inc/customizer.php:32
+msgid "Background Image For Footer"
+msgstr "Фоновая картинка для подвала"
+
+#: ../inc/customizer.php:33
+msgid "Image used in footer as background."
+msgstr "Фон подвала."
+
+#: ../inc/customizer.php:46
+msgid "Default Featured Image"
+msgstr "Картинка по умолчанию"
+
+#: ../inc/customizer.php:47
+msgid "Image used in post preview when no feature image is set in the post."
+msgstr "Изображение превью, если нет картинки в посте."
+
+#: ../inc/customizer.php:60
+msgid "Archive Page"
+msgstr "Архив"
+
+#: ../inc/customizer.php:62
+#, php-format
+msgid ""
+"Select a <a href=\"%s\">static page</a> which will serve as archive for "
+"posts."
+msgstr "Выберите <a href=\"%s\">статичную картинку</a> для постов."
+
+#: ../inc/customizer.php:78
+msgid "Infinite Scroll"
+msgstr "Бесконечный скролл"
+
+#: ../inc/customizer.php:79
+msgid "Enable infinite scroll for blog archive, categories and tags."
+msgstr "Подключить бесконечную прокрутку для постов, категорий и тегов."
+
+#: ../inc/customizer.php:93
+msgid "Lazyload"
+msgstr "Фоновая подгрузка"
+
+#: ../inc/customizer.php:94
+msgid "Enable lazyload using bLazy (vanilla JS library)."
+msgstr "Подключить подгрузку через bLazy (библиотечка JS)."
+
+#: ../inc/customizer.php:108
+msgid "Background Image For Previous Pager"
+msgstr "Фон для предыдущего поста"
+
+#: ../inc/customizer.php:109
+msgid "Image used as bacground in \"previous\" post(s) navigation."
+msgstr "Картинка для фона ссылки на предыдущий пост."
+
+#: ../inc/customizer.php:123
+msgid "Background Image For Next Pager"
+msgstr "Фон для следующего поста"
+
+#: ../inc/customizer.php:124
+msgid "Image used as bacground in \"next\" post(s) navigation."
+msgstr "Картинка для фона ссылки на следующий пост."
+
+#: ../inc/theme-panel.php:9
+msgid "Digital Nomad"
+msgstr "Цифровой путешественник (Digital Nomad)"
+
+#: ../inc/theme-panel.php:20
+msgid "Welcome to Digital Nomad"
+msgstr "Добро пожаловатьв  тему Цифровой путешественник (Digital Nomad)"
+
+#: ../inc/theme-panel.php:22
+msgid "Congrats on choosing Digital Nomad, theme for digital nomads like you."
+msgstr "Спасибо, что выбрали тему для путешественников Digital Nomad."
+
+#: ../inc/theme-panel.php:25
+msgid "Theme Homepage"
+msgstr "Домашняя страница темы"
+
+#: ../inc/theme-panel.php:27
+msgid "Configuration"
+msgstr "Настройки"
+
+#: ../inc/theme-panel.php:28
+msgid "Follow these steps to set up theme correctly:"
+msgstr "Для настройки темы выполните следующие шаги:"
+
+#: ../inc/theme-panel.php:32
+#, php-format
+msgid ""
+"Install using a child theme to avoid custom overrides lost. Learn more about "
+"child themes on <a href=\"%s\">Wordpress.org</a>."
+msgstr ""
+"Установить через дочернюю тему, чтобы не потерять данные при обновлении. "
+"Читайте о подтемах на <a href=\"%s\">Wordpress.org</a>."
+
+#: ../inc/theme-panel.php:36
+#, php-format
+msgid ""
+"Under <a href=\"%s\">Widgets</a> add menu/about text for Header sidebar. Use "
+"\"Custom HTML\" widget."
+msgstr ""
+"В разделе <a href=\"%s\">Виджеты</a> добавьте пункт меню с текстом в "
+"Заголовок, используя опцию \"Свой HTML\"."
+
+#: ../inc/theme-panel.php:40
+#, php-format
+msgid "In <a href=\"%s\">Customizer</a> set:"
+msgstr "В пункте <a href=\"%s\">Настройки</a>:"
+
+#: ../inc/theme-panel.php:43
+msgid "Under \"Site Identity\" set square \"Logo\" and \"Site Icon\"."
+msgstr ""
+"В пункте \"Идентика сайта\" поставьте квадратное \"Лого\" и \"Иконку сайта\"."
+
+#: ../inc/theme-panel.php:44
+msgid "Under \"Header Image\" set background picture for header."
+msgstr ""
+"В пункте \"Изображение Заголовка\" выберите фоновую картинку для заголовка."
+
+#: ../inc/theme-panel.php:45
+msgid ""
+"Under \"Homepage Settings\" use \"Your latest posts\" as homepage display."
+msgstr ""
+"В пункте \"Настройки главной\" используйте \"Последние посты\" для вывода."
+
+#: ../inc/theme-panel.php:46
+msgid "Under \"Digital Nomad Options\":"
+msgstr "В настройках \"Digital Nomad\":"
+
+#: ../inc/theme-panel.php:48
+msgid "Set \"Background Image For Footer\""
+msgstr "Установите \"Фоновую картинку для подвала\""
+
+#: ../inc/theme-panel.php:49
+msgid ""
+"Set \"Default Featured Image\", image used in post archives when no feature "
+"image is selected."
+msgstr ""
+"Установите \"Картинку по умолчанию\", для вывода на странице постов, когда "
+"изображение не выбрано."
+
+#: ../inc/theme-panel.php:50
+msgid ""
+"Select static \"Archive Page\" which will be used as an archive for all "
+"posts. Date archives are disabled by default and will return 404 if no "
+"archive page is selected."
+msgstr ""
+"Выберите статическую страницу для \"Архива постов\" для полного архива. "
+"Архив по дате по умолчанию деактивирован и возвращает ошибку 404 при выборе."
+
+#: ../inc/theme-panel.php:51
+msgid ""
+"Enable \"Infinite Scroll\" for latest posts, categories and tags. Custom "
+"post types and custom taxonomies are also supported."
+msgstr ""
+"Подключите \"Бесконечный скролл\" для последних записей, категорий и тегов. "
+"Также поддерживаются пользовательские типы постов и тегов."
+
+#: ../inc/theme-panel.php:52
+msgid ""
+"Enable \"Lazyload\" for latest posts, categories and tags. NOTE: Images in "
+"posts are not nativelly lazyloaded"
+msgstr ""
+"Подключить \"Подгрузку\" постов, категорйи и тегов. Обратите внимание, что "
+"изображения при этом не подгружаются заранее"
+
+#: ../inc/theme-panel.php:53
+msgid ""
+"Set \"Background Image For Next & Previous Pager\" for &lt;noscript&gt; "
+"support."
+msgstr ""
+"Установите \"Фоновое изображение для следующего и предыдущего постов\" для "
+"поддержки &lt;noscript&gt;."
+
+#: ../inc/theme-panel.php:58
+msgid "That's it!"
+msgstr "Вот и все!"
+
+#: ../inc/theme-panel.php:61
+msgid "Recommended Plugins"
+msgstr "Рекомендуем плагины"
+
+#: ../inc/theme-panel.php:64
+msgid "reSmush.it Image Optimizer"
+msgstr "оптимизатор изображений reSmush.it"
+
+#: ../inc/theme-panel.php:65
+msgid ""
+"Digital Nomad theme relies heavy on images. reSmush.it is free service "
+"providing image size reduction based on several advanced algorithms. The API "
+"accept JPG, PNG and GIF files up to 5MB. Set reSmush,it quality to 82."
+msgstr ""
+"Тема Digital Nomad основана на изображениях. reSmush.it - это бесплатный "
+"сервис, позволяющий уменьшить размер на основе продвинутых алгоритмов. API "
+"принимает файлы JPG, PNG и GIF до 5МБ. Установите качество reSmush,it на "
+"уровень 82."
+
+#: ../inc/theme-panel.php:68
+msgid "Yoast SEO"
+msgstr "Оптимизация Yoast SEO"
+
+#: ../inc/theme-panel.php:69
+msgid ""
+"My favorite option when it comes to SEO plugin for WordPress. Yoast SEO "
+"generates sitemap.xml, sets page titles, creates metatags, etc."
+msgstr ""
+"Мой выбор касательно плагинов для SEO под WordPress. Yoast SEO создает файл "
+"sitemap.xml, указывает названия страниц, создает метатеги и пр."
+
+#: ../inc/theme-panel.php:74
+msgid "Code Syntax Block"
+msgstr "Блок для подсветки кода"
+
+#: ../inc/theme-panel.php:75
+msgid "A plugin to extend Gutenberg code block with syntax highlighting."
+msgstr "Этот плагин позволяет подсвечивать код в рамках редактора Gutenberg."
+
+#: ../inc/theme-panel.php:78
+msgid "WP Super Cache"
+msgstr "Кеширование WP Super Cache"
+
+#: ../inc/theme-panel.php:79
+msgid ""
+"Don not leave your site without enabled cache. WP Super Cache from "
+"Automattic does the job well."
+msgstr ""
+"Используйте сайт только с подключенным кешированием. Плагин WP Super Cache "
+"разработки Automattic прекрасно справляется с этим."
+
+#: ../inc/theme-panel.php:83
+msgid "Post-installation Actions"
+msgstr "После установки"
+
+#: ../inc/theme-panel.php:86
+msgid "Leave a review"
+msgstr "Напишите отзыв"
+
+#: ../inc/theme-panel.php:87
+msgid ""
+"If you like Digital Nomad, review the theme on WordPress.org. Leave a review "
+"even if you don't like it."
+msgstr ""
+"Если вам нравится тема Digital Nomad, напишите обзор на WordPress.org. Если "
+"не нравится, тоже напишите."
+
+#: ../inc/theme-panel.php:90
+msgid "Feature Requests"
+msgstr "Запросы функций"
+
+#: ../inc/theme-panel.php:91
+msgid "Send feature request for Digital Nomad theme."
+msgstr "Напишите, что вам требуется в теме Digital Nomad."
+
+#: ../inc/theme-panel.php:96
+msgid "Follow me on Twitter"
+msgstr "Подпишитесь на меня на Twitter"
+
+#: ../inc/theme-panel.php:97
+msgid "If you like my work, follow me on Twitter."
+msgstr "Если нравится, что я делаю, подпишитесь на меня в Twitter."
+
+#: ../inc/theme-panel.php:101
+msgid "What theme does not"
+msgstr "Чего в теме нет"
+
+#: ../inc/theme-panel.php:103
+msgid ""
+"Theme doesn't require jQuery so (after additional optimalization) you can "
+"easily reach out high score in Google's PageSpeed Insights."
+msgstr ""
+"Тема не требует jQuery, пожтому (с правильной оптимизацией) вы сможете бить "
+"рекорды по скорости загрузки на Google PageSpeed."
+
+#: ../inc/theme-panel.php:104
+msgid ""
+"Theme doesn't support post-formats. I have personally never used this "
+"WordPress feature and that's why I didn't add support."
+msgstr ""
+"Тема не форматирует посты. Я сам никогда не использовал эту встроенную "
+"функцию WordPress, поэтому поддержку ее не включал."
+
+#: ../inc/theme-panel.php:105
+msgid ""
+"Theme doesn't use navigation menus. Instead, it uses short about-me text in "
+"the header which can be hotlinked to various sections of the blog."
+msgstr ""
+"Тема не использует меню навигации, только краткий текст об авторе, который "
+"можно залинковать на любые разделы блога."
+
+#: ../inc/theme-panel.php:107
+msgid "@TODO"
+msgstr "На очереди"
+
+#: ../inc/theme-panel.php:109
+msgid "Add native lazyloading for post images."
+msgstr "Нативная предзагрузка изображений."
+
+#: ../inc/theme-panel.php:110
+msgid "Add Medium like zoom for post images."
+msgstr "Добавление зума в стиле Medium для изображений в постах."
+
+#: ../inc/theme-panel.php:113
+msgid "It's not in theme, it's in the content! But good theme also helps..."
+msgstr "Секрет успеха не в теме, а в контенте. Но хорошая тема помогает..."
+
+#: ../inc/theme-panel.php:148
+#, php-format
+msgid ""
+"Digital Nomad theme activated. <a href=\"%s\">Visit configuration "
+"instructions here</a>."
+msgstr ""
+"Тема Digital Nomad активирована. <a href=\"%s\">Посмотрите инструкции по "
+"настройке</a>."
+
+#: ../inc/theme-setup.php:11
+msgid "Header text"
+msgstr "Текст заголовка"
+
+#: ../inc/theme-setup.php:12
+msgid "Menu/about text for Header sidebar. Use \"Custom HTML\" widget."
+msgstr ""
+"Текст раздела Меню/О сайте для боковой колонки Заголовка. Используйте виджет "
+"\"Свой HTML\"."
+
+#: ../inc/theme-setup.php:79
+msgid "Archive"
+msgstr "Архив"
+
+#: ../inc/theme-setup.php:84
+msgid "Header default image"
+msgstr "Изображение Заголовка по умолчанию"
+
+#: ../inc/theme-setup.php:88 ../inc/theme-setup.php:96
+#: ../inc/theme-setup.php:100
+msgid "Footer default image"
+msgstr "Изображение Подвала по умолчанию"
+
+#: ../inc/theme-setup.php:92
+msgid "Feature default image"
+msgstr "Изображение Избранного изображения по умолчанию"
+
+#: ../inc/theme-setup.php:109
+msgid "About like menu"
+msgstr "Меню раздела О сайте"
+
+#: ../templates/archive-title.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Найдено по запросу: %s"
+
+#: ../templates/archive-title.php:18
+msgid "Page not found"
+msgstr "Страница не нашлась"
+
+#: ../templates/archive-title.php:21
+msgid "Asides"
+msgstr "Дополнительно"
+
+#: ../templates/archive-title.php:24
+msgid "Images"
+msgstr "Изображения"
+
+#: ../templates/archive-title.php:27
+msgid "Videos"
+msgstr "Видео"
+
+#: ../templates/archive-title.php:30
+msgid "Quotes"
+msgstr "Цитаты"
+
+#: ../templates/archive-title.php:33
+msgid "Links"
+msgstr "Ссылки"
+
+#: ../templates/post-none.php:5
+msgid "No content, empty, zero, nothing..."
+msgstr "Здесь ничего, тупо, просто, ноль, ничегошечки..."
+
+#: ../templates/post-single.php:18
+#, php-format
+msgid "Permalink for: %s"
+msgstr "Постоянная ссылка для: %s"
