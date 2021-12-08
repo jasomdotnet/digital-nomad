@@ -160,3 +160,7 @@ Source: https://pxhere.com/en/photo/1562371
 * Font size on big screens decreased
 * Better element center in Gutenberg
 * Released: April 14, 2021
+
+= 1.2.0 =
+* Restoring the classic Widgets Editor
+* Released: December 8, 2021

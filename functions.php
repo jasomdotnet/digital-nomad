@@ -1045,3 +1045,9 @@ if (!class_exists( 'Digitalnomad_Walker_Comment' )) {
 
 }
 // comments end #
+
+/**
+ * Restore the classic Widgets Editor
+ * https://developer.wordpress.org/block-editor/how-to-guides/widgets/opting-out/#using-a-filter
+ */
+add_filter( 'use_widgets_block_editor', '__return_false' );
